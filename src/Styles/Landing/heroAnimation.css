@@ -1,0 +1,58 @@
+/* Animation styles */
+@keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .floating-leaves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .leaf {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .leaf:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .leaf:nth-child(2) {
+    top: 50%;
+    right: 15%;
+    animation-delay: 1s;
+  }
+  
+  .leaf:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 2s;
+  }
+  
+  .dish-image {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .review-card {
+    animation: float 5s ease-in-out infinite;
+    animation-delay: 1s;
+  }

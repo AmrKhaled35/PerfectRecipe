@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset Password</title>
+  <link rel="stylesheet" href="../../Styles/Auth.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+  <div class="background-overlay"></div>
+  <div class="container">
+    <div class="image-section">
+      <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop" alt="Cooking Background"/>
+    </div>
+    <div class="form-section">
+      <div class="form-container">
+        <h1>Reset Password</h1>
+        <p class="subtitle">Enter your email to reset your password</p>
+        <form id="forgot-form">
+          <div class="form-group">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="email" id="forgot-email" required />
+            <label for="forgot-email">Email</label>
+          </div>
+          <button type="submit" class="submit-btn">Reset Password</button>
+        </form>
+        <p class="switch-form">
+          Remember your password? <a href="#" id="back-to-signin">Back to Sign In</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="../../Scripts/Auth/ForgetPass.js"></script>
+</body>
+</html>
