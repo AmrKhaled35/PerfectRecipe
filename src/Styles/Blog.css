@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -48,6 +48,8 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
 }
 
 .big-card .content {
@@ -55,13 +57,18 @@ body {
     padding: 30px;
 }
 
+.big-card .content p {
+    font-size: 18px;
+}
+
 .big-card .image {
     flex: 1;
     width: 100%;       
-    height: auto;      
+    height: 100%;      
     display: block;   
     object-fit: contain;
     background: #ddd url('https://via.placeholder.com/600x400') center/cover no-repeat;
+    border-radius: 8px;
 }
 
 .paragraph1 {
@@ -96,7 +103,7 @@ body {
 /* Small Cards Grid */
 .small-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     gap: 30px;
     margin-top: 20px;
 }
