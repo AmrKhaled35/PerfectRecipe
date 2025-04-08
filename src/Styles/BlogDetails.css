@@ -8,7 +8,8 @@ body {
 }
 
 .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div9 {
-    max-width: 1200px;
+    width: 80%;
+    /* width: 100%; */
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -86,8 +87,6 @@ hr {
 
 .div5 {
     background-color: #fff8f5;
-    padding: 3rem;
-    margin: 3rem auto;
     border-left: 4px solid #c97862;
     text-align: center;
 }
