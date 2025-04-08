@@ -6,6 +6,7 @@
   padding: 0 5%;
   background: linear-gradient(135deg, var(--background-color) 60%, var(--accent-pink) 40%);
   overflow: hidden;
+  background-color: #fff5f3;
 }
 
 .hero-content {

@@ -48,7 +48,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, rgba(255, 126, 0, 0.3), rgba(255, 165, 0, 0.1));
+    background: linear-gradient(45deg, #c9786279, rgba(255, 165, 0, 0.1));
   }
   
   .image-section img {
@@ -145,13 +145,13 @@
     top: -20px;
     left: 0;
     font-size: 0.8em;
-    color: #FF7E00;
+    color: #c97862;
     font-weight: 500;
   }
   
   .form-group input:focus ~ i,
   .form-group input:valid ~ i {
-    color: #FF7E00;
+    color: #c97862;
   }
   
   .remember-forgot {
@@ -170,12 +170,12 @@
   }
   
   .remember input[type="checkbox"] {
-    accent-color: #FF7E00;
+    accent-color: #c97862;
     cursor: pointer;
   }
   
   .forgot {
-    color: #FF7E00;
+    color: #c97862;
     text-decoration: none;
     font-size: 0.9em;
     font-weight: 500;
@@ -183,13 +183,13 @@
   }
   
   .forgot:hover {
-    color: #FF5500;
+    color: #c97862;
   }
   
   .submit-btn {
     width: 100%;
     padding: 15px;
-    background: #FF7E00;
+    background: #c97862;
     border: none;
     border-radius: 30px;
     color: white;
@@ -202,9 +202,9 @@
   }
   
   .submit-btn:hover {
-    background: #FF5500;
+    background: #c97862;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 126, 0, 0.3);
+    /* box-shadow: 0 5px 15px rgba(255, 126, 0, 0.3); */
   }
   
   .submit-btn:active {
@@ -218,14 +218,14 @@
   }
   
   .switch-form a {
-    color: #FF7E00;
+    color: #c97862;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
   }
   
   .switch-form a:hover {
-    color: #FF5500;
+    color: #c97862;
     text-decoration: underline;
   }
   
