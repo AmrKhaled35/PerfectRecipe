@@ -1,0 +1,37 @@
+.brands {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+.brand-grid {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand-grid img {
+    height: 50px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.brand-grid img:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .brand-grid {
+        gap: 20px;
+    }
+
+    .brand-grid img {
+        height: 30px;
+    }
+}

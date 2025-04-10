@@ -8,8 +8,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="../../Styles/Landing/Landing.css" />
     <link rel="stylesheet" href="../../Styles/Landing/header.css" />
     <link rel="stylesheet" href="../../Styles/Landing/heroAnimation.css" />
@@ -17,6 +23,12 @@
     <link rel="stylesheet" href="../../Styles/Landing/ShareRecipes.css" />
     <link rel="stylesheet" href="../../Styles/Landing/RecipeSection.css" />
     <link rel="stylesheet" href="../../Styles/Landing/Blog.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/brands.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/CategorySection.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/footer.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/TouchSection.css" />
+
+
   </head>
   <body>
     <header class="header">
@@ -91,223 +103,453 @@
       </div>
     </section>
     <section class="share-recipes">
-        <div class="container">
-          <div class="image">
-            <img src="../../../Public/assets/image.png" alt="Share Recipe" />
+      <div class="container">
+        <div class="image">
+          <img src="../../../Public/assets/image.png" alt="Share Recipe" />
+        </div>
+        <div class="content">
+          <h2>Share Your <span class="accent">Recipes</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+            vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit
+          </p>
+          <button class="btn btn-primary">Create New Recipe</button>
+        </div>
+      </div>
+    </section>
+    <section class="RecipeSection">
+      <div class="RecipeHeader">
+        <h1>Trending Recipe</h1>
+        <a href="#" class="view-more">View more</a>
+      </div>
+
+      <div class="recipes-grid">
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img src="../../../Public/assets/image1.jpeg" alt="Onion Rings" />
+            <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+            <label for="bookmark1" class="bookmark-btn">
+              <i class="bi bi-bookmark"></i>
+              <i class="bi bi-bookmark-fill"></i>
+            </label>
           </div>
-          <div class="content">
-            <h2>Share Your <span class="accent">Recipes</span></h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit
-            </p>
-            <button class="btn btn-primary">Create New Recipe</button>
+          <div class="recipe-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3>Onion Rings</h3>
+          <div class="recipe-info">
+            <div class="author">
+              <img
+                src="https://ui-avatars.com/api/?name=Alex+Martin"
+                alt="Alex Martin"
+              />
+              <span>Alex Martin</span>
+            </div>
+            <div class="calories">
+              <i class="bi bi-fire"></i>
+              322 cals
+            </div>
           </div>
         </div>
-      </section>
-      <section class="RecipeSection">
-        <div class="RecipeHeader">
-            <h1>Trending Recipe</h1>
-            <a href="#" class="view-more">View more</a>
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img
+              src="../../../Public/assets/image2.jpeg"
+              alt="Toast with Tomato"
+            />
+            <input type="checkbox" id="bookmark2" class="bookmark-checkbox" />
+            <label for="bookmark2" class="bookmark-btn">
+              <i class="bi bi-bookmark"></i>
+              <i class="bi bi-bookmark-fill"></i>
+            </label>
+          </div>
+          <div class="recipe-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3>Toast with Tomato, Onion, & Hummus</h3>
+          <div class="recipe-info">
+            <div class="author">
+              <img
+                src="https://ui-avatars.com/api/?name=Alex+Martin"
+                alt="Alex Martin"
+              />
+              <span>Alex Martin</span>
+            </div>
+            <div class="calories">
+              <i class="bi bi-fire"></i>
+              199 cals
+            </div>
+          </div>
         </div>
-        
-        <div class="recipes-grid">
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="../../../Public/assets/image1.jpeg" alt="Onion Rings">
-                    <input type="checkbox" id="bookmark1" class="bookmark-checkbox">
-                    <label for="bookmark1" class="bookmark-btn">
-                        <i class="bi bi-bookmark"></i>
-                        <i class="bi bi-bookmark-fill"></i>
-                    </label>
-                </div>
-                <div class="recipe-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                    <div class="author">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Martin" alt="Alex Martin">
-                        <span>Alex Martin</span>
-                    </div>
-                    <div class="calories">
-                        <i class="bi bi-fire"></i>
-                        322 cals
-                    </div>
-                </div>
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img
+              src="../../../Public/assets/image3.jpeg"
+              alt="Ham, Egg, and Spinach Roll-Ups"
+            />
+            <input type="checkbox" id="bookmark3" class="bookmark-checkbox" />
+            <label for="bookmark3" class="bookmark-btn">
+              <i class="bi bi-bookmark"></i>
+              <i class="bi bi-bookmark-fill"></i>
+            </label>
+          </div>
+          <div class="recipe-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3>Ham, Egg, and Spinach Roll-Ups</h3>
+          <div class="recipe-info">
+            <div class="author">
+              <img
+                src="https://ui-avatars.com/api/?name=Alex+Martin"
+                alt="Alex Martin"
+              />
+              <span>Alex Martin</span>
             </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="../../../Public/assets/image2.jpeg" alt="Toast with Tomato">
-                    <input type="checkbox" id="bookmark2" class="bookmark-checkbox">
-                    <label for="bookmark2" class="bookmark-btn">
-                        <i class="bi bi-bookmark"></i>
-                        <i class="bi bi-bookmark-fill"></i>
-                    </label>
-                </div>
-                <div class="recipe-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Toast with Tomato, Onion, & Hummus</h3>
-                <div class="recipe-info">
-                    <div class="author">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Martin" alt="Alex Martin">
-                        <span>Alex Martin</span>
-                    </div>
-                    <div class="calories">
-                        <i class="bi bi-fire"></i>
-                        199 cals
-                    </div>
-                </div>
+            <div class="calories">
+              <i class="bi bi-fire"></i>
+              174 cals
             </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="../../../Public/assets/image3.jpeg" alt="Ham, Egg, and Spinach Roll-Ups">
-                    <input type="checkbox" id="bookmark3" class="bookmark-checkbox">
-                    <label for="bookmark3" class="bookmark-btn">
-                        <i class="bi bi-bookmark"></i>
-                        <i class="bi bi-bookmark-fill"></i>
-                    </label>
-                </div>
-                <div class="recipe-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Ham, Egg, and Spinach Roll-Ups</h3>
-                <div class="recipe-info">
-                    <div class="author">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Martin" alt="Alex Martin">
-                        <span>Alex Martin</span>
-                    </div>
-                    <div class="calories">
-                        <i class="bi bi-fire"></i>
-                        174 cals
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="../../../Public/assets/image4.jpeg" alt="Chicken Ranch Wrap">
-                    <input type="checkbox" id="bookmark4" class="bookmark-checkbox">
-                    <label for="bookmark4" class="bookmark-btn">
-                        <i class="bi bi-bookmark"></i>
-                        <i class="bi bi-bookmark-fill"></i>
-                    </label>
-                </div>
-                <div class="recipe-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Chicken Ranch Wrap</h3>
-                <div class="recipe-info">
-                    <div class="author">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Martin" alt="Alex Martin">
-                        <span>Alex Martin</span>
-                    </div>
-                    <div class="calories">
-                        <i class="bi bi-fire"></i>
-                        188 cals
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="../../../Public/assets/image5.jpeg" alt="Tuna Mex Tuna Salad">
-                    <input type="checkbox" id="bookmark5" class="bookmark-checkbox">
-                    <label for="bookmark5" class="bookmark-btn">
-                        <i class="bi bi-bookmark"></i>
-                        <i class="bi bi-bookmark-fill"></i>
-                    </label>
-                </div>
-                <div class="recipe-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                </div>
-                <h3>Tuna Mex Tuna Salad</h3>
-                <div class="recipe-info">
-                    <div class="author">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Martin" alt="Alex Martin">
-                        <span>Alex Martin</span>
-                    </div>
-                    <div class="calories">
-                        <i class="bi bi-fire"></i>
-                        298 cals
-                    </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                    <img src="../../../Public/assets/image6.jpeg" alt="Strawberry and Cherry Pancake">
-                    <input type="checkbox" id="bookmark1" class="bookmark-checkbox">
-                    <label for="bookmark1" class="bookmark-btn">
-                        <i class="bi bi-bookmark"></i>
-                        <i class="bi bi-bookmark-fill"></i>
-                    </label>
-                </div>
-                <div class="recipe-rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Strawberry and Cherry Pancake</h3>
-                <div class="recipe-info">
-                    <div class="author">
-                        <img src="https://ui-avatars.com/api/?name=Alex+Martin" alt="Alex Martin">
-                        <span>Alex Martin</span>
-                    </div>
-                    <div class="calories">
-                        <i class="bi bi-fire"></i>
-                        251 cals
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img
+              src="../../../Public/assets/image4.jpeg"
+              alt="Chicken Ranch Wrap"
+            />
+            <input type="checkbox" id="bookmark4" class="bookmark-checkbox" />
+            <label for="bookmark4" class="bookmark-btn">
+              <i class="bi bi-bookmark"></i>
+              <i class="bi bi-bookmark-fill"></i>
+            </label>
+          </div>
+          <div class="recipe-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3>Chicken Ranch Wrap</h3>
+          <div class="recipe-info">
+            <div class="author">
+              <img
+                src="https://ui-avatars.com/api/?name=Alex+Martin"
+                alt="Alex Martin"
+              />
+              <span>Alex Martin</span>
+            </div>
+            <div class="calories">
+              <i class="bi bi-fire"></i>
+              188 cals
+            </div>
+          </div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img
+              src="../../../Public/assets/image5.jpeg"
+              alt="Tuna Mex Tuna Salad"
+            />
+            <input type="checkbox" id="bookmark5" class="bookmark-checkbox" />
+            <label for="bookmark5" class="bookmark-btn">
+              <i class="bi bi-bookmark"></i>
+              <i class="bi bi-bookmark-fill"></i>
+            </label>
+          </div>
+          <div class="recipe-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+          </div>
+          <h3>Tuna Mex Tuna Salad</h3>
+          <div class="recipe-info">
+            <div class="author">
+              <img
+                src="https://ui-avatars.com/api/?name=Alex+Martin"
+                alt="Alex Martin"
+              />
+              <span>Alex Martin</span>
+            </div>
+            <div class="calories">
+              <i class="bi bi-fire"></i>
+              298 cals
+            </div>
+          </div>
+        </div>
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img
+              src="../../../Public/assets/image6.jpeg"
+              alt="Strawberry and Cherry Pancake"
+            />
+            <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+            <label for="bookmark1" class="bookmark-btn">
+              <i class="bi bi-bookmark"></i>
+              <i class="bi bi-bookmark-fill"></i>
+            </label>
+          </div>
+          <div class="recipe-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <h3>Strawberry and Cherry Pancake</h3>
+          <div class="recipe-info">
+            <div class="author">
+              <img
+                src="https://ui-avatars.com/api/?name=Alex+Martin"
+                alt="Alex Martin"
+              />
+              <span>Alex Martin</span>
+            </div>
+            <div class="calories">
+              <i class="bi bi-fire"></i>
+              251 cals
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="blog-section">
-        <div class="blog-header">
-          <h2>Blog</h2>
-          <a href="#" class="view-more">View more</a>
+      <div class="blog-header">
+        <h2>Blog</h2>
+        <a href="#" class="view-more">View more</a>
+      </div>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-image">
+            <img
+              src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Intermittent Fasting"
+            />
+          </div>
+          <div class="blog-content">
+            <h3>Unlocking the Benefits of Intermittent Fasting for</h3>
+            <p class="blog-category">
+              Weight Management and Health Weight Management and Health Weight
+              Management and Health Weight Management and Health Weight ...
+            </p>
+          </div>
         </div>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <div class="blog-image">
-              <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Intermittent Fasting">
-            </div>
-            <div class="blog-content">
-              <h3>Unlocking the Benefits of Intermittent Fasting for</h3>
-              <p class="blog-category">Weight Management and Health Weight Management and Health Weight Management and Health Weight Management and Health Weight ...</p>
-            </div>
-          </article>
-          <article class="blog-card">
-            <div class="blog-image">
-              <img src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Sugar Consumption">
-            </div>
-            <div class="blog-content">
-              <h3>The Impact of Sugar Consumption on Your Health</h3>
-              <p class="blog-category">Unveiling the Hidden Dangers Unveiling the Hidden Dangers Unveiling the Hidden Dangers Unveiling the Hidden Dangers ...</p>
-            </div>
-          </article>
+        <div class="blog-card">
+          <div class="blog-image">
+            <img
+              src="https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Sugar Consumption"
+            />
+          </div>
+          <div class="blog-content">
+            <h3>The Impact of Sugar Consumption on Your Health</h3>
+            <p class="blog-category">
+              Unveiling the Hidden Dangers Unveiling the Hidden Dangers
+              Unveiling the Hidden Dangers Unveiling the Hidden Dangers ...
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+    <section class="newsletter">
+      <h2>Let's Stay In Touch!</h2>
+      <p>
+        Join our newsletter, so that we reach out to you with our news and
+        offers.
+      </p>
+      <div class="subscribe-form">
+        <input type="email" placeholder="Enter Your Email" />
+        <button>Subscribe</button>
+      </div>
+    </section>
+    <section class="categories">
+      <div class="categories-header">
+        <h2>Popular Categories</h2>
+        <a href="#" class="view-more">View more</a>
+      </div>
+      <div class="category-grid">
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666"
+            alt="Breakfast"
+          />
+          <p>Breakfast recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1547496502-affa22d38842"
+            alt="Lunch"
+          />
+          <p>Lunch recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1576867757603-05b134ebc379"
+            alt="Dinner"
+          />
+          <p>Dinner recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1541529086526-db283c563270"
+            alt="Appetizer"
+          />
+          <p>Appetizer recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd"
+            alt="Salad"
+          />
+          <p>Salad recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
+            alt="Pizza"
+          />
+          <p>Pizza recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1502741384106-56538427cde9"
+            alt="Smoothie"
+          />
+          <p>Smoothie recipes</p>
+        </div>
+        <div class="category-item">
+          <img
+            src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8"
+            alt="Pasta"
+          />
+          <p>Pasta recipes</p>
+        </div>
+      </div>
+    </section>
+    <section class="brands">
+      <div class="brand-grid">
+        <img
+          src="https://1000logos.net/wp-content/uploads/2017/03/Nestle-Logo-2015.png"
+          alt="Nestle"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/488px-Apple_logo_black.svg.png"
+          alt="Apple"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png"
+          alt="Amazon"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
+          alt="Google"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/2560px-Walmart_logo.svg.png"
+          alt="Walmart"
+        />
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-logo">
+            <h2><i class="bi bi-egg-fried"></i> PerfectRecipe</h2>
+            <p>
+              The purpose of lorem ipsum is to create a natural looking block of
+              text that doesn't distract from the layout.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="link-column">
+              <h3>Quick links</h3>
+              <ul>
+                <li>
+                  <a href="#"><i class="bi bi-house"></i> Home</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-journal-text"></i> Recipes</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-pencil-square"></i> Blog</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="link-column">
+              <h3>Quick links</h3>
+              <ul>
+                <li>
+                  <a href="#"><i class="bi bi-share"></i> Share Recipe</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-people"></i> About Us</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-envelope"></i> Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="link-column">
+              <h3>Legal</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><i class="bi bi-shield-check"></i> Terms Of Use</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-lock"></i> Privacy & Cookies</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="newsletter-column">
+              <h3>Newsletter</h3>
+              <p>Subscribe to our newsletter to get more free tip</p>
+              <div class="footer-subscribe">
+                <div class="input-group">
+                  <i class="bi bi-envelope"></i>
+                  <input type="email" placeholder="Enter Your Email" />
+                </div>
+                <button><i class="bi bi-send"></i> Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2023 RecipeLogo. All Right Reserved</p>
+          <div class="social-links">
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" aria-label="Pinterest"
+              ><i class="bi bi-pinterest"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="../../Scripts/Landing/Landing.js"></script>
   </body>
 </html>
