@@ -161,3 +161,9 @@ h3 {
   .bookmark-checkbox:checked + .bookmark-btn {
     background: #fff;
   }
+
+  .clickable-area {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }

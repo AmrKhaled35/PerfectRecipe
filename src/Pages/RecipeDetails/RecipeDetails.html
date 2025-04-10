@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classic Tiramisu Recipe</title>
+    <link
+      rel="stylesheet"
+      href="../../Styles/RecipeDetails/RecipeDetails.css"
+    />
+    <link rel="stylesheet" href="../../Styles/Landing/footer.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/header.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">
+          <i class="fas fa-utensils"></i>
+        </span>
+        <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
+      </div>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <nav class="nav">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Recipe</a></li>
+          <li><a href="#">Add Recipe</a></li>
+          <li><a href="#">blog</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="btn btn-secondary">Log in</button>
+        <button class="btn btn-primary">Sign up</button>
+      </div>
+    </header>
+    <div class="container">
+      <div class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Recipes</span>
+      </div>
+
+      <h1 class="recipe-title">Classic Italian Tiramisu</h1>
+
+      <div class="recipe-header">
+        <div class="header-item">
+          <img
+            src="../../../Public/assets/RecipeDetails/img1.jpeg"
+            alt="Author"
+            class="author-image"
+          />
+          <div class="author-info">
+            <span class="author-name">Isabella Romano</span>
+            <span class="publish-date">March 15, 2024</span>
+          </div>
+        </div>
+
+        <div class="header-item">
+          <i class="fas fa-clock"></i>
+          <div class="time-info">
+            <span>PREP TIME</span>
+            <span class="time">30 mins</span>
+          </div>
+        </div>
+
+        <div class="header-item">
+          <i class="fas fa-clock"></i>
+          <div class="time-info">
+            <span>CHILL TIME</span>
+            <span class="time">4 hours</span>
+          </div>
+        </div>
+
+        <div class="header-item">
+          <i class="fas fa-utensils"></i>
+          <span>Italian Dessert</span>
+        </div>
+      </div>
+
+      <div class="recipe-grid">
+        <div class="main-image">
+          <img
+            src="../../../Public/assets/RecipeDetails/img2.jpeg"
+            alt="Tiramisu"
+          />
+        </div>
+
+        <div class="nutrition-info">
+          <h2>Nutrition Information</h2>
+          <ul>
+            <li><span>Calories:</span> <span>350</span></li>
+            <li><span>Protein:</span> <span>7g</span></li>
+            <li><span>Carbohydrates:</span> <span>38g</span></li>
+            <li><span>Fat:</span> <span>18g</span></li>
+            <li><span>Sugars:</span> <span>28g</span></li>
+            <li><span>Calcium:</span> <span>15%</span></li>
+          </ul>
+          <p class="nutrition-note">Values are per serving (1/8 of recipe) adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="recipe-description">
+          <p>
+            This authentic Italian tiramisu is a classic dessert that combines
+            espresso-soaked ladyfingers with a rich, creamy mascarpone filling.
+            Perfect for special occasions or when you want to impress your
+            guests with a taste of Italy.
+          </p>
+        </div>
+
+        <div class="key-points">
+          <h2>Why You'll Love This Recipe</h2>
+          <div class="points-grid">
+            <div class="point-item">
+              <i class="fas fa-check-circle"></i>
+              <span>No-Bake Recipe</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Make-Ahead Friendly</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Authentic Italian Taste</span>
+            </div>
+            <div class="point-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Perfect for Parties</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ingredients-section">
+          <div class="ingredients-list">
+            <h2>Ingredients</h2>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing1" />
+              <label for="ing1">6 egg yolks</label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing2" />
+              <label for="ing2">1 cup white sugar</label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing3" />
+              <label for="ing3">1¼ cup mascarpone cheese</label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing4" />
+              <label for="ing4">2 cups strong brewed espresso</label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing5" />
+              <label for="ing5">24 ladyfinger cookies</label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing6" />
+              <label for="ing6">½ cup unsweetened cocoa powder</label>
+            </div>
+          </div>
+          <div class="chef-image">
+            <img
+              src="../../../Public/assets/RecipeDetails/img3.jpeg"
+              alt="Chef preparing tiramisu"
+            />
+          </div>
+        </div>
+
+        <div class="instructions-section">
+          <h2>Instructions</h2>
+          <div class="instructions-grid">
+            <div class="instructions-list">
+              <div class="instruction-item">
+                <span class="number">1.</span>
+                <span class="text"
+                  >In a medium bowl, whisk together egg yolks and sugar until
+                  pale and creamy.</span
+                >
+              </div>
+              <div class="instruction-item">
+                <span class="number">2.</span>
+                <span class="text"
+                  >Add mascarpone cheese to the egg mixture and beat until well
+                  combined.</span
+                >
+              </div>
+              <div class="instruction-item">
+                <span class="number">3.</span>
+                <span class="text"
+                  >Dip ladyfingers in espresso and layer in a 9x13 inch baking
+                  dish.</span
+                >
+              </div>
+              <div class="instruction-item">
+                <span class="number">4.</span>
+                <span class="text"
+                  >Spread half of the mascarpone mixture over the
+                  ladyfingers.</span
+                >
+              </div>
+              <div class="instruction-item">
+                <span class="number">5.</span>
+                <span class="text"
+                  >Repeat layers and dust with cocoa powder. Refrigerate for 4
+                  hours.</span
+                >
+              </div>
+            </div>
+            <div class="instruction-image">
+              <img
+                src="../../../Public/assets/RecipeDetails/img4.jpeg"
+                alt="Tiramisu layers"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="tips-section">
+          <h2>Pro Tips</h2>
+          <div class="tips-grid">
+            <div class="tip-item">
+              <i class="fas fa-lightbulb"></i>
+              <div class="tip-content">
+                <h3>Room Temperature Ingredients</h3>
+                <p>
+                  Use mascarpone cheese at room temperature for smoother mixing.
+                </p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <i class="fas fa-lightbulb"></i>
+              <div class="tip-content">
+                <h3>Quick Dipping</h3>
+                <p>
+                  Dip ladyfingers quickly to prevent them from getting too
+                  soggy.
+                </p>
+              </div>
+            </div>
+            <div class="tip-item">
+              <i class="fas fa-lightbulb"></i>
+              <div class="tip-content">
+                <h3>Chilling Time</h3>
+                <p>
+                  Don't skip the chilling time - it allows flavors to develop.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="variations-section">
+          <h2>Recipe Variations</h2>
+          <div class="variations-grid">
+            <div class="variation-card">
+              <img
+                src="../../../Public/assets/RecipeDetails/img5.jpeg"
+                alt="Chocolate Tiramisu"
+              />
+              <div class="variation-content">
+                <h3>Chocolate Tiramisu</h3>
+                <p>Add dark chocolate layers for an extra indulgent twist.</p>
+              </div>
+            </div>
+            <div class="variation-card">
+              <img
+                src="../../../Public/assets/RecipeDetails/img6.jpeg"
+                alt="Berry Tiramisu"
+              />
+              <div class="variation-content">
+                <h3>Berry Tiramisu</h3>
+                <p>Fresh berries add a fruity summer flavor.</p>
+              </div>
+            </div>
+            <div class="variation-card">
+              <img
+                src="../../../Public/assets/RecipeDetails/img7.jpeg"
+                alt="Matcha Tiramisu"
+              />
+              <div class="variation-content">
+                <h3>Matcha Tiramisu</h3>
+                <p>An Asian-inspired version with green tea powder.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="recommended-recipes">
+      <h2>More Italian Desserts You'll Love</h2>
+      <div class="recipe-cards">
+        <div class="recipe-card">
+          <img
+            src="../../../Public/assets/RecipeDetails/img9.webp"
+            alt="Cannoli"
+          />
+          <div class="recipe-card-content">
+            <h3>Classic Cannoli</h3>
+            <p>Crispy shells filled with sweet ricotta cream</p>
+            <a href="#" class="recipe-link"
+              >View Recipe <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="recipe-card">
+          <img
+            src="../../../Public/assets/RecipeDetails/img10.jpeg"
+            alt="Panna Cotta"
+          />
+          <div class="recipe-card-content">
+            <h3>Vanilla Panna Cotta</h3>
+            <p>Silky smooth Italian custard dessert</p>
+            <a href="#" class="recipe-link"
+              >View Recipe <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+        <div class="recipe-card">
+          <img
+            src="../../../Public/assets/RecipeDetails/img4.jpeg"
+            alt="Gelato"
+          />
+          <div class="recipe-card-content">
+            <h3>Homemade Gelato</h3>
+            <p>Rich and creamy Italian ice cream</p>
+            <a href="#" class="recipe-link"
+              >View Recipe <i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Let's Stay In Touch!</h2>
+      <p>
+        Join our newsletter to receive more delicious Italian recipes and
+        cooking tips!
+      </p>
+      <div class="subscribe-form">
+        <input type="email" placeholder="Enter Your Email" />
+        <button>Subscribe</button>
+      </div>
+    </section>
+
+    <section class="cooking-tips">
+      <h2>Essential Italian Cooking Tips</h2>
+      <div class="tips-cards">
+        <div class="tip-card">
+          <i class="fas fa-cheese"></i>
+          <h3>Choose Quality Ingredients</h3>
+          <p>
+            The secret to authentic Italian cooking is using the finest
+            ingredients available.
+          </p>
+        </div>
+        <div class="tip-card">
+          <i class="fas fa-temperature-high"></i>
+          <h3>Temperature Matters</h3>
+          <p>Always bring ingredients to room temperature before starting.</p>
+        </div>
+        <div class="tip-card">
+          <i class="fas fa-clock"></i>
+          <h3>Take Your Time</h3>
+          <p>
+            Good Italian food can't be rushed - patience is key to perfect
+            results.
+          </p>
+        </div>
+        <div class="tip-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Fresh Herbs</h3>
+          <p>Use fresh herbs whenever possible for the best flavor.</p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-logo">
+            <h2><i class="bi bi-egg-fried"></i> PerfectRecipe</h2>
+            <p>
+              The purpose of lorem ipsum is to create a natural looking block of
+              text that doesn't distract from the layout.
+            </p>
+          </div>
+
+          <div class="footer-links">
+            <div class="link-column">
+              <h3>Quick links</h3>
+              <ul>
+                <li>
+                  <a href="#"><i class="bi bi-house"></i> Home</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-journal-text"></i> Recipes</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-pencil-square"></i> Blog</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="link-column">
+              <h3>Quick links</h3>
+              <ul>
+                <li>
+                  <a href="#"><i class="bi bi-share"></i> Share Recipe</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-people"></i> About Us</a>
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-envelope"></i> Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="link-column">
+              <h3>Legal</h3>
+              <ul>
+                <li>
+                  <a href="#"
+                    ><i class="bi bi-shield-check"></i> Terms Of Use</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="bi bi-lock"></i> Privacy & Cookies</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="newsletter-column">
+              <h3>Newsletter</h3>
+              <p>Subscribe to our newsletter to get more free tip</p>
+              <div class="footer-subscribe">
+                <div class="input-group">
+                  <i class="bi bi-envelope"></i>
+                  <input type="email" placeholder="Enter Your Email" />
+                </div>
+                <button><i class="bi bi-send"></i> Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2023 RecipeLogo. All Right Reserved</p>
+          <div class="social-links">
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" aria-label="Pinterest"
+              ><i class="bi bi-pinterest"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

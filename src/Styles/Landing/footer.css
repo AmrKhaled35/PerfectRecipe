@@ -1,6 +1,7 @@
 .footer {
     background-color: #fff5f5;
     padding: 60px 20px 20px;
+    box-sizing: border-box;
 }
 
 .footer-content {
