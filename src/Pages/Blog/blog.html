@@ -4,14 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Styles/Blog.css">
+    <link rel="stylesheet" href="../../Styles/Landing/footer.css">
+    <link rel="stylesheet" href="../../Styles/Landing/header.css">
+    <link rel="stylesheet" href="../../Styles/Landing/heroResponsive.css">
+
     <title>Blog</title>
 </head>
 <body>
+    <header class="header">
+        <div class="logo">
+          <span class="logo-icon">
+            <i class="fas fa-utensils"></i>
+          </span>
+          <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <nav class="nav">
+          <ul>
+            <li><a href="../Landing/Landing.html" class="active">Home</a></li>
+            <li><a href="#">Recipe</a></li>
+            <li><a href="#">Add Recipe</a></li>
+            <li><a href="../Blog/blog.html">blog</a></li>
+            <li><a href="#">About us</a></li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <button class="btn btn-secondary">Log in</button>
+          <button class="btn btn-primary">Sign up</button>
+        </div>
+      </header>  
     <div class="container">
         <div class="path">
             <h6>Home > <span class="active">Blog</span></h6>
         </div>
-        <div class="header">
+        <div class="Bheader">
             <h3>Blog</h3>
         </div>
         <div class="big-card-container">
@@ -30,7 +62,7 @@
             </div>
         </div>
         <div class="small-cards">
-            <article class="card">
+            <div class="card">
                 <div class="image">
                     <img src="../../../Public/assets/blogImages/blog2.jpg" alt="Blog post">
                 </div>
@@ -41,9 +73,8 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quasi beatae aperiam maiores voluptates architecto error qui, dolor nulla ducimus recusandae velit numquam eum voluptatem cum!
                     </p>
                 </div>
-            </article>
-            <!-- Repeat for other cards with the same structure -->
-            <article class="card">
+            </div>
+            <div class="card">
                 <div class="image">
                     <img src="../../../Public/assets/blogImages/blog3.jpg" alt="Blog post">
                 </div>
@@ -54,8 +85,8 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quasi beatae aperiam maiores voluptates architecto error qui, dolor nulla ducimus recusandae velit numquam eum voluptatem cum!
                     </p>
                 </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <div class="image">
                     <img src="../../../Public/assets/blogImages/blog4.jpg" alt="Blog post">
                 </div>
@@ -66,8 +97,8 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quasi beatae aperiam maiores voluptates architecto error qui, dolor nulla ducimus recusandae velit numquam eum voluptatem cum!
                     </p>
                 </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <div class="image">
                     <img src="../../../Public/assets/blogImages/blog5.jpg" alt="Blog post">
                 </div>
@@ -78,8 +109,8 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quasi beatae aperiam maiores voluptates architecto error qui, dolor nulla ducimus recusandae velit numquam eum voluptatem cum!
                     </p>
                 </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <div class="image">
                     <img src="../../../Public/assets/blogImages/blog6.jpg" alt="Blog post">
                 </div>
@@ -90,8 +121,8 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quasi beatae aperiam maiores voluptates architecto error qui, dolor nulla ducimus recusandae velit numquam eum voluptatem cum!
                     </p>
                 </div>
-            </article>
-            <article class="card">
+            </div>
+            <div class="card">
                 <div class="image">
                     <img src="../../../Public/assets/blogImages/blog1.jpg" alt="Blog post">
                 </div>
@@ -102,7 +133,7 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quasi beatae aperiam maiores voluptates architecto error qui, dolor nulla ducimus recusandae velit numquam eum voluptatem cum!
                     </p>
                 </div>
-            </article>
+            </div>
         </div>
         <nav class="pagination" aria-label="Blog pagination">
             <a href="#" aria-label="Previous page"><span class="char">&lt;</span></a>
@@ -114,5 +145,91 @@
             <a href="#" aria-label="Next page"><span class="char">&gt;</span></a>
         </nav>
     </div>
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-main">
+            <div class="footer-logo">
+              <h2><i class="bi bi-egg-fried"></i> PerfectRecipe</h2>
+              <p>
+                The purpose of lorem ipsum is to create a natural looking block of
+                text that doesn't distract from the layout.
+              </p>
+            </div>
+  
+            <div class="footer-links">
+              <div class="link-column">
+                <h3>Quick links</h3>
+                <ul>
+                  <li>
+                    <a href="#"><i class="bi bi-house"></i> Home</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-journal-text"></i> Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-pencil-square"></i> Blog</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="link-column">
+                <h3>Quick links</h3>
+                <ul>
+                  <li>
+                    <a href="#"><i class="bi bi-share"></i> Share Recipe</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-people"></i> About Us</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-envelope"></i> Contact</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="link-column">
+                <h3>Legal</h3>
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="bi bi-shield-check"></i> Terms Of Use</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-lock"></i> Privacy & Cookies</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="newsletter-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to get more free tip</p>
+                <div class="footer-subscribe">
+                  <div class="input-group">
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" placeholder="Enter Your Email" />
+                  </div>
+                  <button><i class="bi bi-send"></i> Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="footer-bottom">
+            <p>© 2023 RecipeLogo. All Right Reserved</p>
+            <div class="social-links">
+              <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="Pinterest"
+                ><i class="bi bi-pinterest"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>

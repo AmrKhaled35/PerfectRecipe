@@ -29,7 +29,7 @@ body {
     font-weight: 600;
 }
 
-.header h3 {
+.Bheader h3 {
     font-size: 36px;
     margin: 0 0 40px;
     color: #222;
@@ -52,6 +52,7 @@ body {
 
 .big-card:hover {
     transform: translateY(-4px);
+    cursor: pointer;
 }
 
 .big-card .content {
@@ -139,6 +140,7 @@ body {
 
 .card:hover {
     transform: translateY(-4px);
+    cursor: pointer;
 }
 
 .card .image {
