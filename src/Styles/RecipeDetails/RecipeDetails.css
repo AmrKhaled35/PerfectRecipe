@@ -273,7 +273,6 @@ body {
     line-height: 1.4;
 }
 
-/* New Sections */
 .variations-section {
     grid-column: 1/-1;
     margin-top: 40px;
@@ -320,7 +319,7 @@ body {
 }
 
 .recommended-recipes {
-    max-width: 1200px;
+    max-width: 85%;
     margin: 60px auto;
     padding: 0 20px;
 }
@@ -437,7 +436,7 @@ body {
 }
 
 .cooking-tips {
-    max-width: 1200px;
+    max-width: 85%;
     margin: 60px auto;
     padding: 0 20px;
 }
