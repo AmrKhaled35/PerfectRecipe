@@ -27,8 +27,6 @@
     <link rel="stylesheet" href="../../Styles/Landing/CategorySection.css" />
     <link rel="stylesheet" href="../../Styles/Landing/footer.css" />
     <link rel="stylesheet" href="../../Styles/Landing/TouchSection.css" />
-
-
   </head>
   <body>
     <header class="header">
@@ -39,7 +37,7 @@
         <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">
-        <div class="hamburger">
+        <div class="resNav">
           <span></span>
           <span></span>
           <span></span>
@@ -49,14 +47,24 @@
         <ul>
           <li><a href="../Landing/Landing.html" class="active">Home</a></li>
           <li><a href="#">Recipe</a></li>
-          <li><a href="#">Add Recipe</a></li>
+          <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
           <li><a href="../Blog/blog.html">blog</a></li>
           <li><a href="../AboutUs/About.html">About us</a></li>
         </ul>
       </nav>
-      <div class="auth-buttons">
-        <button class="btn btn-secondary">Log in</button>
-        <button class="btn btn-primary">Sign up</button>
+      <div class="header-icons">
+        <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+        <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
+          ><i class="far fa-heart"></i
+        ></a>
+        <a href="#" class="icon-link profile-icon">
+          <div class="profile-image">
+            <img
+              src="../../../Public/assets/hero/hero1.jpeg"
+              alt="Profile"
+            />
+          </div>
+        </a>
       </div>
     </header>
 
@@ -71,19 +79,19 @@
           vitae enim pharetra, venenatis nunc eget, finibus est. Proin velit
         </p>
         <div class="hero-buttons">
-          <button class="btn btn-primary">Sign up</button>
+          <h2>Welcome to <span class="accent">PerfectRecipe</span></h2>
         </div>
       </div>
 
       <div class="hero-image">
         <img
-          src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+          src="../../../Public/assets/hero/hero2.jpeg"
           alt="Delicious Dish"
           class="dish-image"
         />
         <div class="review-card">
           <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
+            src="../../../Public/assets/hero/hero3.jpg"
             alt="Sara Johnson"
             class="reviewer-image"
           />
@@ -126,8 +134,14 @@
       <div class="recipes-grid">
         <div class="recipe-card">
           <div class="recipe-image">
-            <a href="../RecipeDetails/RecipeDetails.html" class="clickable-area">
-              <img src="../../../Public/assets/image1.jpeg" alt="Toast with Tomato" />
+            <a
+              href="../RecipeDetails/RecipeDetails.html"
+              class="clickable-area"
+            >
+              <img
+                src="../../../Public/assets/image1.jpeg"
+                alt="Toast with Tomato"
+              />
             </a>
             <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
             <label for="bookmark1" class="bookmark-btn">
@@ -159,8 +173,14 @@
         </div>
         <div class="recipe-card">
           <div class="recipe-image">
-            <a href="../RecipeDetails/RecipeDetails.html" class="clickable-area">
-              <img src="../../../Public/assets/image2.jpeg" alt="Toast with Tomato" />
+            <a
+              href="../RecipeDetails/RecipeDetails.html"
+              class="clickable-area"
+            >
+              <img
+                src="../../../Public/assets/image2.jpeg"
+                alt="Toast with Tomato"
+              />
             </a>
             <input type="checkbox" id="bookmark2" class="bookmark-checkbox" />
             <label for="bookmark2" class="bookmark-btn">
@@ -192,8 +212,14 @@
         </div>
         <div class="recipe-card">
           <div class="recipe-image">
-            <a href="../RecipeDetails/RecipeDetails.html" class="clickable-area">
-              <img src="../../../Public/assets/image3.jpeg" alt="Toast with Tomato" />
+            <a
+              href="../RecipeDetails/RecipeDetails.html"
+              class="clickable-area"
+            >
+              <img
+                src="../../../Public/assets/image3.jpeg"
+                alt="Toast with Tomato"
+              />
             </a>
             <input type="checkbox" id="bookmark3" class="bookmark-checkbox" />
             <label for="bookmark3" class="bookmark-btn">
@@ -225,8 +251,14 @@
         </div>
         <div class="recipe-card">
           <div class="recipe-image">
-            <a href="../RecipeDetails/RecipeDetails.html" class="clickable-area">
-              <img src="../../../Public/assets/image4.jpeg" alt="Toast with Tomato" />
+            <a
+              href="../RecipeDetails/RecipeDetails.html"
+              class="clickable-area"
+            >
+              <img
+                src="../../../Public/assets/image4.jpeg"
+                alt="Toast with Tomato"
+              />
             </a>
             <input type="checkbox" id="bookmark4" class="bookmark-checkbox" />
             <label for="bookmark4" class="bookmark-btn">
@@ -258,8 +290,14 @@
         </div>
         <div class="recipe-card">
           <div class="recipe-image">
-            <a href="../RecipeDetails/RecipeDetails.html" class="clickable-area">
-              <img src="../../../Public/assets/image5.jpeg" alt="Toast with Tomato" />
+            <a
+              href="../RecipeDetails/RecipeDetails.html"
+              class="clickable-area"
+            >
+              <img
+                src="../../../Public/assets/image5.jpeg"
+                alt="Toast with Tomato"
+              />
             </a>
             <input type="checkbox" id="bookmark5" class="bookmark-checkbox" />
             <label for="bookmark5" class="bookmark-btn">
@@ -291,8 +329,14 @@
         </div>
         <div class="recipe-card">
           <div class="recipe-image">
-            <a href="../RecipeDetails/RecipeDetails.html" class="clickable-area">
-              <img src="../../../Public/assets/image6.jpeg" alt="Toast with Tomato" />
+            <a
+              href="../RecipeDetails/RecipeDetails.html"
+              class="clickable-area"
+            >
+              <img
+                src="../../../Public/assets/image6.jpeg"
+                alt="Toast with Tomato"
+              />
             </a>
             <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
             <label for="bookmark1" class="bookmark-btn">
@@ -327,7 +371,7 @@
     <section class="blog-section">
       <div class="blog-header">
         <h2>Blog</h2>
-        <a href="#" class="view-more">View more</a>
+        <a href="../Blog/blog.html" class="view-more">View more</a>
       </div>
       <div class="blog-grid">
         <div class="blog-card">

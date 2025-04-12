@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Favorite Recipes - PerfectRecipe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../../Styles/Favorites/Favorites.css">
-    <link rel="stylesheet" href="../../Styles/Landing/footer.css">
-    <link rel="stylesheet" href="../../Styles/Landing/header.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    
+    <link rel="stylesheet" href="../../Styles/Favorites/Favorites.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/footer.css" />
+    <link rel="stylesheet" href="../../Styles/Landing/header.css" />
+  </head>
+  <body>
     <header class="header">
       <div class="logo">
         <span class="logo-icon">
@@ -19,7 +26,7 @@
         <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
       </div>
       <button class="menu-toggle" aria-label="Toggle menu">
-        <div class="hamburger">
+        <div class="resNav">
           <span></span>
           <span></span>
           <span></span>
@@ -27,62 +34,71 @@
       </button>
       <nav class="nav">
         <ul>
-          <li><a href="../Landing/Landing.html">Home</a></li>
+          <li><a href="../Landing/Landing.html" class="active">Home</a></li>
           <li><a href="#">Recipe</a></li>
-          <li><a href="#">Add Recipe</a></li>
+          <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
           <li><a href="../Blog/blog.html">blog</a></li>
-          <li><a href="#">About us</a></li>
+          <li><a href="../AboutUs/About.html">About us</a></li>
         </ul>
       </nav>
-      <div class="auth-buttons">
-        <button class="btn btn-secondary">Log in</button>
-        <button class="btn btn-primary">Sign up</button>
+      <div class="header-icons">
+        <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+        <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
+          ><i class="far fa-heart"></i
+        ></a>
+        <a href="#" class="icon-link profile-icon">
+          <div class="profile-image">
+            <img src="../../../Public/assets/hero/hero1.jpeg" alt="Profile" />
+          </div>
+        </a>
       </div>
     </header>
     <main class="favorites-container">
-        <div class="favorites-header">
-            <div class="favorites-title-wrapper">
-                <div class="favorites-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h1>Favorites</h1>
-            </div>
-            <div class="favorites-sort">
-                <button class="sort-button">
-                    Sort
-                    <i class="fas fa-chevron-down"></i>
-                </button>
-            </div>
+      <div class="favorites-header">
+        <div class="favorites-title-wrapper">
+          <div class="favorites-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h1>Favorites</h1>
         </div>
+        <div class="favorites-sort">
+          <button class="sort-button">
+            Sort
+            <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </div>
 
-        <div class="favorites-actions">
-            <span class="recipe-count">(98 Recipes)</span>
-            <div class="action-buttons">
-                <button class="action-btn">
-                    <i class="fas fa-check-square"></i>
-                    Select
-                </button>
-                <button class="action-btn">
-                    <i class="fas fa-circle"></i>
-                    All
-                </button>
-                <button class="action-btn delete">
-                    <i class="fas fa-trash"></i>
-                    Delete
-                </button>
-            </div>
+      <div class="favorites-actions">
+        <span class="recipe-count">(98 Recipes)</span>
+        <div class="action-buttons">
+          <button class="action-btn">
+            <i class="fas fa-check-square"></i>
+            Select
+          </button>
+          <button class="action-btn">
+            <i class="fas fa-circle"></i>
+            All
+          </button>
+          <button class="action-btn delete">
+            <i class="fas fa-trash"></i>
+            Delete
+          </button>
         </div>
-        <div class="empty-state">
-            <div class="empty-state-icon">
-                <i class="fas fa-heart"></i>
-            </div>
-            <h2>No Favorite Recipes Yet</h2>
-            <p>Start exploring recipes and save your favorites to find them here!</p>
-            <a href="#" class="explore-btn">
-                <i class="fas fa-search"></i>
-                Explore Recipes
-            </a>
+      </div>
+      <div class="empty-state">
+        <div class="empty-state-icon">
+          <i class="fas fa-heart"></i>
         </div>
+        <h2>No Favorite Recipes Yet</h2>
+        <p>
+          Start exploring recipes and save your favorites to find them here!
+        </p>
+        <a href="#" class="explore-btn">
+          <i class="fas fa-search"></i>
+          Explore Recipes
+        </a>
+      </div>
     </main>
 
     <footer class="footer">
@@ -131,7 +147,9 @@
               <h3>Legal</h3>
               <ul>
                 <li>
-                  <a href="#"><i class="bi bi-shield-check"></i> Terms Of Use</a>
+                  <a href="#"
+                    ><i class="bi bi-shield-check"></i> Terms Of Use</a
+                  >
                 </li>
                 <li>
                   <a href="#"><i class="bi bi-lock"></i> Privacy & Cookies</a>
@@ -159,11 +177,15 @@
             <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
             <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
             <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" aria-label="Pinterest"
+              ><i class="bi bi-pinterest"></i
+            ></a>
           </div>
         </div>
       </div>
     </footer>
-</body>
+  </body>
 </html>

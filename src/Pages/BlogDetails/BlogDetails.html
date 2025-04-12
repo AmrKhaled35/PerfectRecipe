@@ -11,34 +11,44 @@
     <title>Blog Details</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-          <span class="logo-icon">
-            <i class="fas fa-utensils"></i>
-          </span>
-          <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">
+        <i class="fas fa-utensils"></i>
+      </span>
+      <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <div class="resNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <nav class="nav">
+      <ul>
+        <li><a href="../Landing/Landing.html" class="active">Home</a></li>
+        <li><a href="#">Recipe</a></li>
+        <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+        <li><a href="../Blog/blog.html">blog</a></li>
+        <li><a href="../AboutUs/About.html">About us</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+      <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
+        ><i class="far fa-heart"></i
+      ></a>
+      <a href="#" class="icon-link profile-icon">
+        <div class="profile-image">
+          <img
+            src="../../../Public/assets/hero/hero1.jpeg"
+            alt="Profile"
+          />
         </div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
-        <nav class="nav">
-          <ul>
-            <li><a href="../Landing/Landing.html" class="active">Home</a></li>
-            <li><a href="#">Recipe</a></li>
-            <li><a href="#">Add Recipe</a></li>
-            <li><a href="../Blog/blog.html">blog</a></li>
-            <li><a href="#">About us</a></li>
-          </ul>
-        </nav>
-        <div class="auth-buttons">
-          <button class="btn btn-secondary">Log in</button>
-          <button class="btn btn-primary">Sign up</button>
-        </div>
-      </header>
+      </a>
+    </div>
+  </header>
     <div class="div1">
         <h1>A full guide for a better and smarter cooking</h1>
         <div class="container1">
