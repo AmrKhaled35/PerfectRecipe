@@ -3,15 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./RecipeList.css">
+    <link rel="stylesheet" href="../../Styles/RecipeList/RecipeList.css">
+    <link rel="stylesheet" href="../../Styles/Landing/header.css">
+    <link rel="stylesheet" href="../../Styles/Landing/footer.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
     <title>Recipes</title>
 </head>
 <body>
+    <header class="header">
+        <div class="logo">
+          <span class="logo-icon">
+            <i class="fas fa-utensils"></i>
+          </span>
+          <span class="logo-text">Perfect<span class="accent">Recipe</span></span>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <div class="resNav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <nav class="nav">
+          <ul>
+            <li><a href="../Landing/Landing.html" class="active">Home</a></li>
+            <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
+            <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+            <li><a href="../Blog/blog.html">blog</a></li>
+            <li><a href="../AboutUs/About.html">About us</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+          <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
+            ><i class="far fa-heart"></i
+          ></a>
+          <a href="#" class="icon-link profile-icon">
+            <div class="profile-image">
+              <img
+                src="../../../Public/assets/hero/hero1.jpeg"
+                alt="Profile"
+              />
+            </div>
+          </a>
+        </div>
+      </header>
     <div class="container">
+        <div class="Rheader">
+            <div class="section">
+                <h1>Recipes & Cuisine</h1>
+                <p class="paragraph">
+                    Discover delicious recipes from around the world<br /><br />
+                    A simple and tasty recipe for any time
+                </p>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search recipes or ingredients..." class="search-input" />
+                <button class="search-button">Search</button>
+            </div>
+        </div>
         <div class="cards">
             <div class="recipe-card">
                 <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
+                <img src="../../../public/assets/RecipeList/image1.jpeg" alt="Onion Rings" />
                 <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
                 <label for="bookmark1" class="bookmark-btn">
                     <i class="bi bi-bookmark"></i>
@@ -25,7 +90,162 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 </div>
-                <h3>Onion Rings</h3>
+                <h3>Fruits</h3>
+                <div class="recipe-info">
+                <div class="author">
+                    <img
+                    src="https://ui-avatars.com/api/?name=Alex+Khaled"
+                    alt="Alex Martin"
+                    />
+                    <span>Amr Khaled</span>
+                </div>
+                <div class="calories">
+                    <i class="bi bi-fire"></i>
+                    22 cals
+                </div>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                <img src="../../../public/assets/RecipeList/image2.jpg" alt="Onion Rings" />
+                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+                <label for="bookmark1" class="bookmark-btn">
+                    <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-bookmark-fill"></i>
+                </label>
+                </div>
+                <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                </div>
+                <h3>Fries and Burger</h3>
+                <div class="recipe-info">
+                <div class="author">
+                    <img
+                    src="https://ui-avatars.com/api/?name=Anas+Refaei"
+                    alt="Alex Martin"
+                    />
+                    <span>Anas Refaei</span>
+                </div>
+                <div class="calories">
+                    <i class="bi bi-fire"></i>
+                    450 cals
+                </div>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                <img src="../../../public/assets/RecipeList/image3.jpg" alt="Onion Rings" />
+                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+                <label for="bookmark1" class="bookmark-btn">
+                    <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-bookmark-fill"></i>
+                </label>
+                </div>
+                <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                </div>
+                <h3>Cooked Seafoods</h3>
+                <div class="recipe-info">
+                <div class="author">
+                    <img
+                    src="https://ui-avatars.com/api/?name=Abdo+Islam"
+                    alt="Alex Martin"
+                    />
+                    <span>Abdullah Islam</span>
+                </div>
+                <div class="calories">
+                    <i class="bi bi-fire"></i>
+                    322 cals
+                </div>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                <img src="../../../public/assets/RecipeList/image4.jpg" alt="Onion Rings" />
+                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+                <label for="bookmark1" class="bookmark-btn">
+                    <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-bookmark-fill"></i>
+                </label>
+                </div>
+                <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                </div>
+                <h3>Fries With Leaves</h3>
+                <div class="recipe-info">
+                <div class="author">
+                    <img
+                    src="https://ui-avatars.com/api/?name=Zyad+Ashraf"
+                    alt="Alex Martin"
+                    />
+                    <span>Zyad Ashraf</span>
+                </div>
+                <div class="calories">
+                    <i class="bi bi-fire"></i>
+                    322 cals
+                </div>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                <img src="../../../public/assets/RecipeList/image5.jpg" alt="Onion Rings" />
+                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+                <label for="bookmark1" class="bookmark-btn">
+                    <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-bookmark-fill"></i>
+                </label>
+                </div>
+                <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                </div>
+                <h3>Sliced Cake</h3>
+                <div class="recipe-info">
+                <div class="author">
+                    <img
+                    src="https://ui-avatars.com/api/?name=Beshr"
+                    alt="Alex Martin"
+                    />
+                    <span>Beshr</span>
+                </div>
+                <div class="calories">
+                    <i class="bi bi-fire"></i>
+                    322 cals
+                </div>
+                </div>
+            </div>
+            <div class="recipe-card">
+                <div class="recipe-image">
+                <img src="../../../public/assets/RecipeList/image6.jpg" alt="Onion Rings" />
+                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
+                <label for="bookmark1" class="bookmark-btn">
+                    <i class="bi bi-bookmark"></i>
+                    <i class="bi bi-bookmark-fill"></i>
+                </label>
+                </div>
+                <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                </div>
+                <h3>Spaghetti Sauce</h3>
                 <div class="recipe-info">
                 <div class="author">
                     <img
@@ -42,7 +262,7 @@
             </div>
             <div class="recipe-card">
                 <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
+                <img src="../../../public/assets/RecipeList/image7.jpg" alt="Onion Rings" />
                 <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
                 <label for="bookmark1" class="bookmark-btn">
                     <i class="bi bi-bookmark"></i>
@@ -56,14 +276,14 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 </div>
-                <h3>Onion Rings</h3>
+                <h3>Grilled Chicken</h3>
                 <div class="recipe-info">
                 <div class="author">
                     <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
+                    src="https://ui-avatars.com/api/?name=Youssef"
                     alt="Alex Martin"
                     />
-                    <span>Alex Martin</span>
+                    <span>Youssef</span>
                 </div>
                 <div class="calories">
                     <i class="bi bi-fire"></i>
@@ -73,7 +293,7 @@
             </div>
             <div class="recipe-card">
                 <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
+                <img src="../../../public/assets/RecipeList/image8.jpg" alt="Onion Rings" />
                 <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
                 <label for="bookmark1" class="bookmark-btn">
                     <i class="bi bi-bookmark"></i>
@@ -87,363 +307,117 @@
                 <i class="bi bi-star-fill"></i>
                 <i class="bi bi-star-fill"></i>
                 </div>
-                <h3>Onion Rings</h3>
+                <h3>Fried Potatoes</h3>
                 <div class="recipe-info">
                 <div class="author">
                     <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
+                    src="https://ui-avatars.com/api/?name=Omar+Awad"
                     alt="Alex Martin"
                     />
-                    <span>Alex Martin</span>
+                    <span>Omar Awad</span>
                 </div>
                 <div class="calories">
                     <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
-                </div>
-                </div>
-            </div>
-            <div class="recipe-card">
-                <div class="recipe-image">
-                <img src="image1.jpeg" alt="Onion Rings" />
-                <input type="checkbox" id="bookmark1" class="bookmark-checkbox" />
-                <label for="bookmark1" class="bookmark-btn">
-                    <i class="bi bi-bookmark"></i>
-                    <i class="bi bi-bookmark-fill"></i>
-                </label>
-                </div>
-                <div class="recipe-rating">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                </div>
-                <h3>Onion Rings</h3>
-                <div class="recipe-info">
-                <div class="author">
-                    <img
-                    src="https://ui-avatars.com/api/?name=Alex+Martin"
-                    alt="Alex Martin"
-                    />
-                    <span>Alex Martin</span>
-                </div>
-                <div class="calories">
-                    <i class="bi bi-fire"></i>
-                    322 cals
+                    120 cals
                 </div>
                 </div>
             </div>
         </div>
+        <nav class="pagination" aria-label="Blog pagination">
+            <a href="#" aria-label="Previous page"><span class="char">&lt;</span></a>
+            <a href="#" class="active" aria-current="page">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#" aria-label="Next page"><span class="char">&gt;</span></a>
+        </nav>
     </div>
+    <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-main">
+            <div class="footer-logo">
+              <h2><i class="bi bi-egg-fried"></i> PerfectRecipe</h2>
+              <p>
+                The purpose of lorem ipsum is to create a natural looking block of
+                text that doesn't distract from the layout.
+              </p>
+            </div>
+  
+            <div class="footer-links">
+              <div class="link-column">
+                <h3>Quick links</h3>
+                <ul>
+                  <li>
+                    <a href="#"><i class="bi bi-house"></i> Home</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-journal-text"></i> Recipes</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-pencil-square"></i> Blog</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="link-column">
+                <h3>Quick links</h3>
+                <ul>
+                  <li>
+                    <a href="#"><i class="bi bi-share"></i> Share Recipe</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-people"></i> About Us</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-envelope"></i> Contact</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="link-column">
+                <h3>Legal</h3>
+                <ul>
+                  <li>
+                    <a href="#"
+                      ><i class="bi bi-shield-check"></i> Terms Of Use</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="bi bi-lock"></i> Privacy & Cookies</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="newsletter-column">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter to get more free tip</p>
+                <div class="footer-subscribe">
+                  <div class="input-group">
+                    <i class="bi bi-envelope"></i>
+                    <input type="email" placeholder="Enter Your Email" />
+                  </div>
+                  <button><i class="bi bi-send"></i> Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="footer-bottom">
+            <p>© 2023 RecipeLogo. All Right Reserved</p>
+            <div class="social-links">
+              <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="Pinterest"
+                ><i class="bi bi-pinterest"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
