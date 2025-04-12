@@ -175,11 +175,9 @@
   .header {
       padding: 1rem 5%;
   }
-
   .nav {
       display: none;
   }
-
   .menu-toggle {
       display: block;
   }
@@ -188,7 +186,7 @@
       gap: .5rem;
   }
 
-  .nav.active {
+  .menu-toggle:hover + .nav {
       display: flex;
       flex-direction: column;
       position: absolute;
@@ -201,12 +199,12 @@
       z-index: 99;
   }
 
-  .nav.active ul {
+  .nav ul {
       flex-direction: column;
       gap: 1.5rem;
   }
 
-  .nav.active a {
+  .nav a {
       font-size: 1.1rem;
   }
 }
