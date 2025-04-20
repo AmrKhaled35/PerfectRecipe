@@ -83,16 +83,18 @@
           <label for="recipe-images">Recipe Images:</label>
           <div class="image-gallery">
             <div class="main-image-container">
-              <img id="main-image" src="../../../Public/assets/AddRecipe/preview image.jpg" alt="Main recipe image" />
-            </div>
+              <div class="main-image-container" style="position: relative;">
+                <img id="main-image" src="" alt="Main recipe image" style="display: none;" />
+                <button id="delete-main-image" style="display: none; position: absolute; top: 5px; right: 5px;">✕</button>
+              </div>            </div>
             <div class="thumbnail-gallery">
-              <div class="thumbnail-item">
-                <img class="thumbnail-img" src="../../../Public/assets/AddRecipe/preview image.jpg" alt="Recipe thumbnail 1" />
-              </div>
+              
               <div class="add-photo-button">
                 <span class="add-photo-icon">+</span>
                 <span class="add-photo-text">Add Photo</span>
               </div>
+              <input type="file" id="imageUpload" accept="image/*" style="display: none;" />
+
             </div>
           </div>
 
@@ -123,7 +125,7 @@
                 placeholder="Quantity"
               />
             </div>
-          <button type="button" class="add-ingredient">+ Add Ingredient</button>
+            <button type="button" class="add-ingredient" id="addIngredientBtn">+ Add Ingredient</button>
 
           <label for="instructions">Instructions:</label>
           <textarea
@@ -133,5 +135,89 @@
           ></textarea>
         </form>
       </div>
+      <!-- <script>
+        const recipe = {
+          recipeName : document.getElementById("recipe-name"),
+          recipeId: document.getElementById("recipe-id"),
+          description: document.getElementById("recipe-description"),
+          courseName : document.getElementById("recipe-name"),
+          ingredients: [],
+          Instructions: document.getElementById("recipe-name")
+        }
+        console.log(recipe.recipeName.val)
+      </script> -->
+      <script>
+        const addIngredientBtn = document.getElementById("addIngredientBtn");
+        const ingredientList = document.getElementById("ingredient-list");
+
+        addIngredientBtn.addEventListener("click", () => {
+          const newIngredient = document.createElement("div");
+          newIngredient.classList.add("ingredient-item");
+          newIngredient.innerHTML = `
+            <input type="text" name="ingredient-id[]" placeholder="ID" />
+            <input type="text" name="ingredient-name[]" placeholder="Name"/>
+            <input type="text" name="ingredient-quantity[]" placeholder="Quantity" />
+            <button type="button" class="remove-ingredient">✕</button>
+          `;
+
+          // Insert the new ingredient field above the button
+          ingredientList.insertBefore(newIngredient, addIngredientBtn);
+        });
+
+        // Optional: Remove ingredient
+        ingredientList.addEventListener("click", function(e) {
+          if (e.target.classList.contains("remove-ingredient")) {
+            e.target.parentElement.remove();
+          }
+        });
+
+      
+        const addPhotoBtn = document.querySelector('.add-photo-button');
+        const imageInput = document.getElementById('imageUpload');
+        const mainImage = document.getElementById('main-image');
+        const deleteMainBtn = document.getElementById('delete-main-image');
+      
+        addPhotoBtn.addEventListener('click', () => {
+          imageInput.click();
+        });
+      
+        imageInput.addEventListener('change', () => {
+          const file = imageInput.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              mainImage.src = e.target.result;
+              mainImage.style.display = "block";
+              deleteMainBtn.style.display = "block";
+      
+              // Optional: Add to thumbnail gallery
+              const newThumb = document.createElement('div');
+              newThumb.classList.add('thumbnail-item');
+              newThumb.innerHTML = `
+                <div style="position: relative;">
+                  <img class="thumbnail-img" src="${e.target.result}" alt="Recipe thumbnail" />
+                  <button class="delete-thumbnail" style="position:absolute; top:3px; right:3px;">✕</button>
+                </div>`;
+              document.querySelector('.thumbnail-gallery').insertBefore(newThumb, addPhotoBtn);
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      
+        deleteMainBtn.addEventListener('click', () => {
+          mainImage.src = "";
+          mainImage.style.display = "none";
+          deleteMainBtn.style.display = "none";
+          imageInput.value = ""; // Reset file input
+        });
+      
+        // Event delegation to delete thumbnails
+        document.querySelector('.thumbnail-gallery').addEventListener('click', (e) => {
+          if (e.target.classList.contains('delete-thumbnail')) {
+            e.target.closest('.thumbnail-item').remove();
+          }
+        });
+      </script>
+      
   </body>
 </html>
