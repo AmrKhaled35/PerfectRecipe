@@ -37,7 +37,7 @@ form.addEventListener("submit", (event) => {
 
     if (user) {
         localStorage.setItem("currentUser", JSON.stringify(user));
-        window.location.href = "../Landing/Landing.html";
+        window.location.href = "./Pages/Landing/Landing.html";
     } else {
         document.getElementById("password-error").innerHTML = "Invalid email or password";
     }
