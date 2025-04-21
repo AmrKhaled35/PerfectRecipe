@@ -29,23 +29,26 @@
         <form action="./Login.html" id="signup-form">
           <div class="form-group">
             <i class="fa-regular fa-user"></i>
-            <input type="text" id="fullname" required />
+            <input type="text" id="fullname" />
             <label for="fullname">Full Name</label>
+            <p style="color: red; font-size: 18px;" id="fullname-error"></p>
           </div>
           <div class="form-group">
             <i class="fa-regular fa-envelope"></i>
-            <input type="email" id="signup-email" required />
+            <input type="text" id="signup-email" />
             <label for="signup-email">Email</label>
+            <p style="color: red; font-size: 18px;" id="email-error"></p>
           </div>
           <div class="form-group">
             <i class="fa-regular fa-lock"></i>
-            <input type="password" id="signup-password" required />
+            <input type="password" id="signup-password" />
             <label for="signup-password">Password</label>
           </div>
           <div class="form-group">
             <i class="fa-regular fa-lock"></i>
-            <input type="password" id="confirm-password" required />
+            <input type="password" id="confirm-password" />
             <label for="confirm-password">Confirm Password</label>
+            <p style="color: red; font-size: 18px;" id="password-error"></p>
           </div>
           <button type="submit" class="submit-btn">Sign Up</button>
         </form>
@@ -55,5 +58,6 @@
       </div>
     </div>
   </div>
+  <script src="../../Scripts/register.js"></script>
 </body>
 </html>
