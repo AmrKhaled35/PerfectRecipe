@@ -1,65 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In</title>
-    <link rel="stylesheet" href="./Styles/Auth.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-  </head>
-  <body>
-    <div class="background-overlay"></div>
-    <div class="container">
-      <div class="image-section">
-        <img
-          src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop"
-          alt="Cooking Background"
-        />
-      </div>
-      <div class="form-section">
-        <div class="form-container">
-          <h1>Welcome Back</h1>
-          <p class="subtitle">Sign in to access your favorite recipes</p>
-          <form action="./Pages/Landing/Landing.html" id="signin-form">
-            <div class="form-group">
-              <i class="bi bi-envelope"></i>
-              <input type="text" id="email" />
-              <label for="email">Email</label>
-              <p style="color: red; font-size: 18px;" id="email-error"></p>
-            </div>
-            <div class="form-group">
-              <i class="bi bi-lock"></i>
-              <input type="password" id="password" />
-              <label for="password">Password</label>
-              <p style="color: red; font-size: 18px;" id="password-error"></p>
-            </div>
-            <div class="remember-forgot">
-              <label class="remember">
-                <input type="checkbox" />
-                IsAdmin?
-              </label>
-              <a href="./Pages/Auth/ForgetPass.html" class="forgot" id="show-forgot"
-                >Forgot Password?</a
-              >
-            </div>
-            <button type="submit" class="submit-btn" id="submit">
-              Sign In
-            </button>
-          </form>
-          <p class="switch-form">
-            Don't have an account?
-            <a href="./Pages/Auth/Register.html" id="show-signup">Sign Up</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <script src="./Scripts/login.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🥗Perfect Recipe</title>
+</head>
+<body>
+  <script>
+    window.location.href = "./Pages/Auth/Login.html";
+  </script>
+</body>
 </html>
