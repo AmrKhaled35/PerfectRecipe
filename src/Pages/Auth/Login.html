@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In</title>
+    <link rel="icon" type="image/x-icon" href="../../../Public/assets/icon/icon.png">
+    <title>Perfect Recipe</title>
     <link rel="stylesheet" href="../../Styles/Auth.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
@@ -30,18 +31,21 @@
           <form action="../Landing/Landing.html" id="signin-form">
             <div class="form-group">
               <i class="bi bi-envelope"></i>
-              <input type="email" id="email" required />
+              <input type="text" id="email"/>
               <label for="email">Email</label>
+              <p style="color: red; font-size: 18px;" id="email-error"></p>
             </div>
             <div class="form-group">
               <i class="bi bi-lock"></i>
-              <input type="password" id="password" required />
+              <input type="password" id="password"/>
               <label for="password">Password</label>
+              <p style="color: red; font-size: 18px;" id="password-error"></p>
             </div>
+            <p id = "login-error" style="color: red; font-size: 18px; margin-bottom : 30px ;"></p>
             <div class="remember-forgot">
               <label class="remember">
                 <input type="checkbox" />
-                IsAdmin?
+                Remember Me
               </label>
               <a href="./ForgetPass.html" class="forgot" id="show-forgot"
                 >Forgot Password?</a
@@ -58,5 +62,6 @@
         </div>
       </div>
     </div>
+    <script src="../../Scripts/login.js"></script>
   </body>
 </html>

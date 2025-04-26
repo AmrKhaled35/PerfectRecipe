@@ -5,6 +5,22 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.remove-ingredient {
+  font-size: 10px;
+  padding-top: 2px;  
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+  height: 40px;
+  margin-left: 5px;
+  line-height: 1;
+  border-radius: 4px;
+  background-color: #b66055;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
 .recipe-form-header {
   display: flex;
   justify-content: space-between;
@@ -77,6 +93,7 @@ button:hover {
 
 .main-image-container {
   height: fit-content;
+  visibility: hidden;
   border: 2px dashed #ddd;
   border-radius: 5px;
   overflow: hidden;
@@ -143,3 +160,17 @@ button:hover {
   font-size: 0.8em;
   color: #999;
 }
+
+.delete-thumbnail{
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background-color: #b66055;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
