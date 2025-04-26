@@ -193,6 +193,49 @@ h3 {
     border-color: #ccc;
 }
 
+
+.bookmark-checkbox {
+    display: none;
+  }
+  
+  .bookmark-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+  
+  .bookmark-btn:hover {
+    background: #fff;
+    transform: scale(1.1);
+  }
+  
+  .bookmark-btn i {
+    font-size: 1.2rem;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+  
+  .bookmark-btn .bi-bookmark-fill {
+    display: none;
+    color: #E15B4E;
+  }
+  
+
+  .clickable-area {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
 @media (max-width: 640px) {
 
     .bookmark-checkbox {
@@ -231,19 +274,43 @@ h3 {
         color: #E15B4E;
     }
     
-    .bookmark-checkbox:checked + .bookmark-btn .bi-bookmark {
-        display: none;
-    }
-    
-    .bookmark-checkbox:checked + .bookmark-btn .bi-bookmark-fill {
-        display: block;
-    }
-    
-    .bookmark-checkbox:checked + .bookmark-btn {
-        background: #fff;
-    }
-    
     .pagination a {
         padding: 8px 12px;
     }
+}
+
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bookmark-btn i {
+    transition: all 0.3s ease;
+}
+
+.bookmark-btn:hover i {
+    color: #E15B4E;
+}
+
+@keyframes bookmark-bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.bookmark-btn.bookmarked {
+    animation: bookmark-bounce 0.3s ease;
 }
