@@ -484,6 +484,22 @@
         </div>
       </div>
     </footer>
-    <script src="../../Scripts/RecipeDetails.js"></script>
+    <script>
+      // Check the referrer URL to determine which script to load
+      window.onload = function() {
+        const referrer = document.referrer;
+        if (referrer.includes("Landing.html")) {
+          // If coming from the Home page
+          const script1 = document.createElement("script");
+          script1.src = "../../Scripts/RecipeDetails.js";
+          document.body.appendChild(script1);
+        } else if (referrer.includes("RecipeList.html")) {
+          // If coming from the Recipe List page
+          const script2 = document.createElement("script");
+          script2.src = "../../Scripts/recipeDetailsList.js";
+          document.body.appendChild(script2);
+        }
+      };
+    </script>
   </body>
 </html>
