@@ -39,7 +39,7 @@
           <li>
             <a href="../RecipeList/RecipeList.html" class="active">Recipe</a>
           </li>
-          <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+          <li  id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
           <li><a href="../Blog/blog.html">blog</a></li>
           <li><a href="../AboutUs/About.html">About us</a></li>
         </ul>
@@ -195,5 +195,12 @@
       </div>
     </footer>
     <script type="module" src="../../Scripts/Favorites.js"></script>
+    <script>
+      const curUser = JSON.parse(localStorage.getItem("currentUser"));
+      if(curUser.isAdmin){
+        document.getElementById("addRecipe").style.display = "block";
+        document.getElementById("addRecipe").style.gap = "0rem";
+      }
+    </script>
   </body>
 </html>

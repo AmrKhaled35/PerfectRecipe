@@ -48,7 +48,7 @@
         <ul>
           <li><a href="../Landing/Landing.html" class="active">Home</a></li>
           <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
-          <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+          <li  id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
           <li><a href="../Blog/blog.html">blog</a></li>
           <li><a href="../AboutUs/About.html">About us</a></li>
         </ul>
@@ -596,5 +596,12 @@
       </div>
     </footer>
     <script src="../../Scripts/Search.js"></script>
+    <script>
+      const curUser = JSON.parse(localStorage.getItem("currentUser"));
+      if(curUser.isAdmin){
+        document.getElementById("addRecipe").style.display = "block";
+        document.getElementById("addRecipe").style.gap = "0rem";
+      }
+    </script>
   </body>
 </html>

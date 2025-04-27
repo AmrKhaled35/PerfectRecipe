@@ -39,7 +39,7 @@
         <ul>
           <li><a href="../Landing/Landing.html" class="active">Home</a></li>
           <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
-          <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+          <li  id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
           <li><a href="../Blog/blog.html">blog</a></li>
           <li><a href="../AboutUs/About.html">About us</a></li>
         </ul>
@@ -500,6 +500,13 @@
           document.body.appendChild(script2);
         }
       };
+    </script>
+    <script>
+      const curUser = JSON.parse(localStorage.getItem("currentUser"));
+      if(curUser.isAdmin){
+        document.getElementById("addRecipe").style.display = "block";
+        document.getElementById("addRecipe").style.gap = "0rem";
+      }
     </script>
   </body>
 </html>

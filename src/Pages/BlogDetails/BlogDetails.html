@@ -34,7 +34,7 @@
       <ul>
         <li><a href="../Landing/Landing.html" class="active">Home</a></li>
         <li><a href="#">Recipe</a></li>
-        <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+        <li id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
         <li><a href="../Blog/blog.html">blog</a></li>
         <li><a href="../AboutUs/About.html">About us</a></li>
       </ul>
@@ -245,5 +245,12 @@
       </footer>
       <script src="../../Scripts/blogData.js"></script>
       <script src ="../../Scripts/BlogDetails.js"></script>
+      <script>
+        const curUser = JSON.parse(localStorage.getItem("currentUser"));
+        if(curUser.isAdmin){
+          document.getElementById("addRecipe").style.display = "block";
+          document.getElementById("addRecipe").style.gap = "0rem";
+        }
+      </script>
 </body>
 </html>

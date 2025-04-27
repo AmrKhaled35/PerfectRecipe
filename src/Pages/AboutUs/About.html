@@ -32,7 +32,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
           <ul>
             <li><a href="../Landing/Landing.html" >Home</a></li>
             <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
-            <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+            <li id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
             <li><a href="../Blog/blog.html">blog</a></li>
             <li><a href="../AboutUs/About.html" class="active">About us</a></li>
           </ul>
@@ -166,5 +166,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         </div>
     </div>
 </div>
+<script>
+    const curUser = JSON.parse(localStorage.getItem("currentUser"));
+    if(curUser.isAdmin){
+    document.getElementById("addRecipe").style.display = "block";
+    document.getElementById("addRecipe").style.gap = "0rem";
+    }
+</script>
 </body>
 </html>

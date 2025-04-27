@@ -41,7 +41,7 @@
       <ul>
         <li><a href="../Landing/Landing.html" >Home</a></li>
         <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
-        <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+        <li id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
         <li><a href="../Blog/blog.html" class="active">blog</a></li>
         <li><a href="../AboutUs/About.html">About us</a></li>
       </ul>
@@ -53,10 +53,10 @@
       ></a>
       <a href="#" class="icon-link profile-icon">
         <div class="profile-image">
-          <img
-            src="../../../Public/assets/hero/hero1.jpeg"
-            alt="Profile"
-          />
+          <img src="../../../Public/assets/hero/hero1.jpeg" alt="Profile" />
+          <div class="dropdown-content">
+            <button>Logout</button>
+          </div>
         </div>
       </a>
     </div>
@@ -233,7 +233,7 @@
                   </li>
                 </ul>
               </div>
-  
+
               <div class="newsletter-column">
                 <h3>Newsletter</h3>
                 <p>Subscribe to our newsletter to get more free tip</p>
@@ -266,5 +266,12 @@
       </footer>
       <script src ="../../Scripts/BlogData.js"></script>
       <script src="../../Scripts/blogHandler.js"></script>
+      <script>
+        const curUser = JSON.parse(localStorage.getItem("currentUser"));
+        if(curUser.isAdmin){
+          document.getElementById("addRecipe").style.display = "block";
+          document.getElementById("addRecipe").style.gap = "0rem";
+        }
+      </script>
 </body>
 </html>
