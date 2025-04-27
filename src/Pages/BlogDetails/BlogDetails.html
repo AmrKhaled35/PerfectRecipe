@@ -41,18 +41,19 @@
     </nav>
     <div class="header-icons">
       <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
-      <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
-        ><i class="far fa-heart"></i
-      ></a>
+      <a href="../Favorites/Favorites.html" class="icon-link heart-icon"><i class="far fa-heart"></i></a>
+  
+      <div class="profile-container">
       <a href="#" class="icon-link profile-icon">
-        <div class="profile-image">
-          <img
-            src="../../../Public/assets/hero/hero1.jpeg"
-            alt="Profile"
-          />
-        </div>
+          <div class="profile-image">
+          <img src="../../../Public/assets/hero/hero1.jpeg" alt="Profile" />
+          </div>
       </a>
-    </div>
+      <div class="profile-dropdown">
+          <a href="../../Pages/Auth/Login.html" class="logout-btn">Logout</a>
+      </div>
+      </div>
+  </div>
   </header>
     <div class="div1">
         <h1>A full guide for a better and smarter cooking</h1>
@@ -245,6 +246,7 @@
       </footer>
       <script src="../../Scripts/blogData.js"></script>
       <script src ="../../Scripts/BlogDetails.js"></script>
+      <script src="../../Scripts/dropDown.js"></script>
       <script>
         const curUser = JSON.parse(localStorage.getItem("currentUser"));
         if(curUser.isAdmin){

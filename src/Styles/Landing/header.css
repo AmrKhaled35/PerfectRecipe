@@ -422,3 +422,40 @@
     height: 200px;
   }
 }
+
+.profile-container {
+  position: relative;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: none;
+  min-width: 120px;
+  z-index: 200;
+}
+
+.profile-dropdown .logout-btn {
+  display: block;
+  color: #c97862;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.profile-dropdown .logout-btn:hover {
+  background-color: #fff5f5;
+  border-radius: 8px;
+}
+
+.profile-container.active .profile-dropdown {
+  display: block;
+}
