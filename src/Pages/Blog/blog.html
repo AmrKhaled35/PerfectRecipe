@@ -41,25 +41,26 @@
       <ul>
         <li><a href="../Landing/Landing.html" >Home</a></li>
         <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
-        <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+        <li id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
         <li><a href="../Blog/blog.html" class="active">blog</a></li>
         <li><a href="../AboutUs/About.html">About us</a></li>
       </ul>
     </nav>
     <div class="header-icons">
       <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
-      <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
-        ><i class="far fa-heart"></i
-      ></a>
+      <a href="../Favorites/Favorites.html" class="icon-link heart-icon"><i class="far fa-heart"></i></a>
+  
+      <div class="profile-container">
       <a href="#" class="icon-link profile-icon">
-        <div class="profile-image">
-          <img
-            src="../../../Public/assets/hero/hero1.jpeg"
-            alt="Profile"
-          />
-        </div>
+          <div class="profile-image">
+          <img src="../../../Public/assets/hero/hero1.jpeg" alt="Profile" />
+          </div>
       </a>
-    </div>
+      <div class="profile-dropdown">
+          <a href="../../Pages/Auth/Login.html" class="logout-btn">Logout</a>
+      </div>
+      </div>
+  </div>
   </header>
     <div class="container">
         <div class="Bheader">
@@ -233,7 +234,7 @@
                   </li>
                 </ul>
               </div>
-  
+
               <div class="newsletter-column">
                 <h3>Newsletter</h3>
                 <p>Subscribe to our newsletter to get more free tip</p>
@@ -266,5 +267,13 @@
       </footer>
       <script src ="../../Scripts/BlogData.js"></script>
       <script src="../../Scripts/blogHandler.js"></script>
+      <script src="../../Scripts/dropDown.js"></script>
+      <script>
+        const curUser = JSON.parse(localStorage.getItem("currentUser"));
+        if(curUser.isAdmin){
+          document.getElementById("addRecipe").style.display = "block";
+          document.getElementById("addRecipe").style.gap = "0rem";
+        }
+      </script>
 </body>
 </html>
