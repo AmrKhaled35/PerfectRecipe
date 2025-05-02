@@ -787,8 +787,68 @@ const recipes = [
 const params = new URLSearchParams(window.location.search);
 const recipeId = parseInt(params.get("id"));
 
-const selectedRecipe = recipes.find((recipe) => recipe.id === recipeId);
-
+if (recipeId > 14) {
+  const localRecipes = JSON.parse(localStorage.getItem("ListOfRecipes")) || [];
+  selectedRecipe = localRecipes.find(
+    (recipe) => parseInt(recipe.id) === recipeId
+  );
+  // Map local storage recipe fields to expected structure if needed
+  if (selectedRecipe) {
+    selectedRecipe = {
+      recipe_title: selectedRecipe.name,
+      author_name: "Omar Awad",
+      publish_date: selectedRecipe.publish_date || "May 2, 2025",
+      time: selectedRecipe.time || "30 mins",
+      chill_time: selectedRecipe.chill_time || "15 mins",
+      category: selectedRecipe.course || "",
+      main_image: selectedRecipe.image || "",
+      instruction_image: selectedRecipe.image || "",
+      calories: "300",
+      protein: "20g",
+      carbohydrates: "35g",
+      fat: "15g",
+      sugars: "8g",
+      calcium: "10%",
+      nutrition_note: selectedRecipe.nutrition_note || "Values are per serving",
+      recipe_description: selectedRecipe.description || "",
+      point_item1: "Fresh Ingredients",
+      point_item2: "Vitamin Rich",
+      point_item3: "Perfect for Gatherings",
+      point_item4: "Simple Ingredients",
+      ingredients: selectedRecipe.ListOfIngredients.map(
+        (ingredient) => `${ingredient.Quantity} ${ingredient.Name}`
+      ),
+      instructions: [selectedRecipe.instructions],
+      tip1_title: selectedRecipe.tip1_title || "Perfect Temperature",
+      tip1_content:
+        selectedRecipe.tip1_content ||
+        "Ensure ingredients are at room temperature for best results",
+      tip2_title: selectedRecipe.tip2_title || "Preparation Tips",
+      tip2_content:
+        selectedRecipe.tip2_content ||
+        "Measure all ingredients before starting",
+      tip3_title: selectedRecipe.tip3_title || "Storage Guide",
+      tip3_content:
+        selectedRecipe.tip3_content ||
+        "Store in an airtight container for up to 3 days",
+      variation1_image: selectedRecipe.image,
+      variation1_title: "Classic Version",
+      variation1_content: "Traditional preparation method",
+      variation2_image: selectedRecipe.image,
+      variation2_title: selectedRecipe.variation2_title || "Alternative Style",
+      variation2_content:
+        selectedRecipe.variation2_content ||
+        "A different take on the classic recipe",
+      variation3_image: selectedRecipe.image,
+      variation3_title: selectedRecipe.variation3_title || "Quick Version",
+      variation3_content:
+        selectedRecipe.variation3_content ||
+        "Simplified preparation for busy days",
+    };
+  }
+} else {
+  selectedRecipe = recipes.find((recipe) => recipe.id === recipeId);
+}
 document.querySelector(".recipe-title").textContent =
   selectedRecipe.recipe_title;
 
