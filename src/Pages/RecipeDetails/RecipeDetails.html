@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../../../Public/assets/icon/icon.png">
     <title>Perfect Recipe</title>
     <link
       rel="stylesheet"
@@ -39,26 +38,22 @@
         <ul>
           <li><a href="../Landing/Landing.html" class="active">Home</a></li>
           <li><a href="../RecipeList/RecipeList.html">Recipe</a></li>
-          <li  id = "addRecipe" style="display: none;"><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
+          <li><a href="../AddRecipe/AddRecipe.html">Add Recipe</a></li>
           <li><a href="../Blog/blog.html">blog</a></li>
           <li><a href="../AboutUs/About.html">About us</a></li>
         </ul>
       </nav>
       <div class="header-icons">
         <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
-        <a href="../Favorites/Favorites.html" class="icon-link heart-icon"><i class="far fa-heart"></i></a>
-    
-        <div class="profile-container">
+        <a href="../Favorites/Favorites.html" class="icon-link heart-icon"
+          ><i class="far fa-heart"></i
+        ></a>
         <a href="#" class="icon-link profile-icon">
-            <div class="profile-image">
+          <div class="profile-image">
             <img src="../../../Public/assets/hero/hero1.jpeg" alt="Profile" />
-            </div>
+          </div>
         </a>
-        <div class="profile-dropdown">
-            <a href="../../Pages/Auth/Login.html" class="logout-btn">Logout</a>
-        </div>
-        </div>
-    </div>
+      </div>
     </header>
     <div class="container">
       <div class="back-button">
@@ -488,30 +483,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      // Check the referrer URL to determine which script to load
-      window.onload = function() {
-        const referrer = document.referrer;
-        if (referrer.includes("Landing.html")) {
-          // If coming from the Home page
-          const script1 = document.createElement("script");
-          script1.src = "../../Scripts/RecipeDetails.js";
-          document.body.appendChild(script1);
-        } else if (referrer.includes("RecipeList.html")) {
-          // If coming from the Recipe List page
-          const script2 = document.createElement("script");
-          script2.src = "../../Scripts/recipeDetailsList.js";
-          document.body.appendChild(script2);
-        }
-      };
-    </script>
-      <script src="../../Scripts/dropDown.js"></script>
-      <script>
-      const curUser = JSON.parse(localStorage.getItem("currentUser"));
-      if(curUser.isAdmin){
-        document.getElementById("addRecipe").style.display = "block";
-        document.getElementById("addRecipe").style.gap = "0rem";
-      }
-    </script>
+    <script src="../../Scripts/RecipeDetails.js"></script>
   </body>
 </html>
