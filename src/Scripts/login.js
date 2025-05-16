@@ -43,10 +43,11 @@ form.addEventListener("submit", async (event) => {
         });
 
         const data = await response.json();
-
+        console.log(data);
         if (response.ok) {
-            localStorage.setItem("currentUser", JSON.stringify(data));
-            window.location.href = "../Landing/Landing.html";
+            console.log(data);
+            localStorage.setItem("Token" , data.access);
+            window.location.href = "../Landing/Landing.html"; 
         } else {
             document.getElementById("password-error").innerHTML = data.detail || "Invalid email or password";
         }

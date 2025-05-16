@@ -11,7 +11,7 @@ form.addEventListener("submit", async (event) => {
     const email = document.getElementById("signup-email").value.trim();
     const password = document.getElementById("signup-password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
-    const isAdmin = document.getElementById("isAdmin").checked;
+    const is_superuser = document.getElementById("isAdmin").checked;
 
     if (fullname === "") {
         document.getElementById("fullname-error").innerHTML = "Please enter your full name";
@@ -93,7 +93,8 @@ form.addEventListener("submit", async (event) => {
     const data = {
         username: fullname,
         email: email,
-        password: password
+        password: password,
+        isAdmin : is_superuser
     };
 
     try {
@@ -108,6 +109,13 @@ form.addEventListener("submit", async (event) => {
         const resData = await response.json();
         console.log(resData);
         if (response.ok) {
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            users.push({
+                username: fullname,
+                email: email,
+                isAdmin: is_superuser
+            });
+            localStorage.setItem("users", JSON.stringify(users));
             window.location.href = "./Login.html";
         } else {
             document.getElementById("password-error").innerHTML = resData.detail || "Registration failed";

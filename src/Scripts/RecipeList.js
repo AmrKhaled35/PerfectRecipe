@@ -142,7 +142,7 @@ function setupSearch() {
 
 async function searchRecipes(query) {
   try {
-    const response = await fetch(`https://omarsaberawad.pythonanywhere.com/search/recipes/?query=${encodeURIComponent(query)}`);
+    const response = await fetch(`https://omarsaberawad.pythonanywhere.com/search/recipes/?search=${encodeURIComponent(query)}`);
     if (!response.ok) throw new Error("Search failed");
     const results = await response.json();
     console.log("🔍 Search Results:", results);
