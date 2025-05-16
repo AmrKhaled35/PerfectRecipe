@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
   const data = await fetchRecipesFromAPI();
-  if (data.length > 0) {
-    renderRecipes(data);
-    initializeBookmarks();
-  }
+  renderRecipes(data);
+  initializeBookmarks();
+  setupSearch();
 });
 
 async function fetchRecipesFromAPI() {
@@ -23,7 +22,6 @@ function renderRecipes(data) {
   data.forEach(recipe => {
     const recipeCard = document.createElement("div");
     recipeCard.classList.add("recipe-card");
-
     recipeCard.innerHTML = `
       <div class="recipe-image">
         <a href="../RecipeDetails/RecipeDetails.html?id=${recipe.id}">
@@ -54,7 +52,6 @@ function renderRecipes(data) {
         </div>
       </div>
     `;
-
     recipeCard.setAttribute('data-recipe-id', recipe.id);
     recipeCard.setAttribute('data-recipe', JSON.stringify({
       id: recipe.id,
@@ -67,15 +64,14 @@ function renderRecipes(data) {
       },
       calories: "120 cals"
     }));
-
     document.querySelector(".cards").appendChild(recipeCard);
   });
+  initializeBookmarks();
 }
 
 function initializeBookmarks() {
   const recipeCards = document.querySelectorAll('.recipe-card');
   let favorites = getFavorites();
-
   recipeCards.forEach(card => {
     const checkbox = card.querySelector('.bookmark-checkbox');
     const label = card.querySelector('.bookmark-btn');
@@ -84,13 +80,11 @@ function initializeBookmarks() {
     const checkboxId = `bookmark-${recipeId}`;
     checkbox.id = checkboxId;
     label.setAttribute('for', checkboxId);
-
     if (favorites.some(fav => fav.id === recipeId)) {
       checkbox.checked = true;
       label.querySelector('.bi-bookmark-fill').style.display = 'block';
       label.querySelector('.bi-bookmark').style.display = 'none';
     }
-
     checkbox.addEventListener('change', function () {
       toggleBookmark(this, recipeData);
     });
@@ -102,7 +96,6 @@ function toggleBookmark(checkbox, recipeData) {
   const filledIcon = label.querySelector('.bi-bookmark-fill');
   const outlineIcon = label.querySelector('.bi-bookmark');
   let favorites = getFavorites();
-
   if (checkbox.checked) {
     filledIcon.style.display = 'block';
     outlineIcon.style.display = 'none';
@@ -114,11 +107,47 @@ function toggleBookmark(checkbox, recipeData) {
     outlineIcon.style.display = 'block';
     favorites = favorites.filter(fav => fav.id !== recipeData.id);
   }
-
   localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
 }
 
 function getFavorites() {
   const favoritesJson = localStorage.getItem('favoriteRecipes');
   return favoritesJson ? JSON.parse(favoritesJson) : [];
+}
+
+function setupSearch() {
+  const input = document.querySelector('.search-input');
+  const button = document.querySelector('.search-button');
+  if (!input || !button) return;
+
+  button.addEventListener('click', () => {
+    const query = input.value.trim();
+    if (query !== '') searchRecipes(query);
+  });
+
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const query = input.value.trim();
+      if (query !== '') searchRecipes(query);
+    }
+  });
+
+  input.addEventListener('input', async () => {
+    if (input.value.trim() === '') {
+      const data = await fetchRecipesFromAPI();
+      renderRecipes(data);
+    }
+  });
+}
+
+async function searchRecipes(query) {
+  try {
+    const response = await fetch(`https://omarsaberawad.pythonanywhere.com/search/recipes/?query=${encodeURIComponent(query)}`);
+    if (!response.ok) throw new Error("Search failed");
+    const results = await response.json();
+    console.log("🔍 Search Results:", results);
+    renderRecipes(results);
+  } catch (error) {
+    console.error("Error searching recipes:", error);
+  }
 }
