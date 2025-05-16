@@ -1,17 +1,19 @@
 const form = document.getElementById("signin-form");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     document.getElementById("email-error").innerHTML = "";
     document.getElementById("password-error").innerHTML = "";
 
-    const email = document.getElementById("email").value;
-    if(email === "")
-    {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (email === "") {
         document.getElementById("email-error").innerHTML = "Please enter your email";
-        return ;
+        return;
     }
+
     let atIdx = 0;
     let dotIdx = 0;
     for (let i = 0; i < email.length; i++) {
@@ -23,22 +25,33 @@ form.addEventListener("submit", (event) => {
     }
     if (!(atIdx > 0 && dotIdx > 0 && atIdx < dotIdx)) {
         document.getElementById("email-error").innerHTML = "Please enter a valid email";
-        return ;
+        return;
     }
-    const password = document.getElementById("password").value;
-    if(password === "")
-    {
+
+    if (password === "") {
         document.getElementById("password-error").innerHTML = "Please enter your password";
-        return ;
+        return;
     }
-    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const user = users.find((user) => user.email === email && user.password === password);
+    try {
+        const response = await fetch("https://omarsaberawad.pythonanywhere.com/auth/login/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, password })
+        });
 
-    if (user) {
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        window.location.href = "../Landing/Landing.html";
-    } else {
-        document.getElementById("password-error").innerHTML = "Invalid email or password";
+        const data = await response.json();
+
+        if (response.ok) {
+            localStorage.setItem("currentUser", JSON.stringify(data));
+            window.location.href = "../Landing/Landing.html";
+        } else {
+            document.getElementById("password-error").innerHTML = data.detail || "Invalid email or password";
+        }
+
+    } catch (error) {
+        document.getElementById("password-error").innerHTML = "Something went wrong. Please try again.";
     }
 });

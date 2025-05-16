@@ -1,29 +1,28 @@
 const form = document.getElementById("signup-form");
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
+
     document.getElementById("fullname-error").innerHTML = "";
     document.getElementById("email-error").innerHTML = "";
     document.getElementById("password-error").innerHTML = "";
 
-    const fullname = document.getElementById("fullname").value;
-    const email = document.getElementById("signup-email").value;
+    const fullname = document.getElementById("fullname").value.trim();
+    const email = document.getElementById("signup-email").value.trim();
     const password = document.getElementById("signup-password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
     const isAdmin = document.getElementById("isAdmin").checked;
-    if(isAdmin){
-        console.log('admin') ;
-    }
-    if(fullname === "")
-    {
+
+    if (fullname === "") {
         document.getElementById("fullname-error").innerHTML = "Please enter your full name";
-        return ;
+        return;
     }
-    if(email === "")
-    {
+
+    if (email === "") {
         document.getElementById("email-error").innerHTML = "Please enter your email";
-        return ;
+        return;
     }
+
     let atIdx = 0;
     let dotIdx = 0;
     for (let i = 0; i < email.length; i++) {
@@ -35,69 +34,85 @@ form.addEventListener("submit", (event) => {
     }
     if (!(atIdx > 0 && dotIdx > 0 && atIdx < dotIdx)) {
         document.getElementById("email-error").innerHTML = "Please enter a valid email";
-        return ;
+        return;
     }
-    if(password === "")
-    {
+
+    if (password === "") {
         document.getElementById("password-error").innerHTML = "Please enter your password";
-        return ;
+        return;
     }
-    if(password.length < 8){
+
+    if (password.length < 8) {
         document.getElementById("password-error").innerHTML = "Password must be at least 8 characters long";
-        return ;
+        return;
     }
+
     let upperCase = false;
     let lowerCase = false;
     let number = false;
     let specialChar = false;
-    for(let i = 0; i < password.length; i++){
-        if(password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90){
+    for (let i = 0; i < password.length; i++) {
+        if (password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90) {
             upperCase = true;
-        }
-        else if(password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122){
+        } else if (password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122) {
             lowerCase = true;
-        }
-        else if(password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57){
-            number = true;    
-        }
-        else{
+        } else if (password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57) {
+            number = true;
+        } else {
             specialChar = true;
         }
     }
-    if(!upperCase){
+
+    if (!upperCase) {
         document.getElementById("password-error").innerHTML = "Password must contain at least one uppercase letter";
-        return ;
+        return;
     }
-    if(!lowerCase){
+    if (!lowerCase) {
         document.getElementById("password-error").innerHTML = "Password must contain at least one lowercase letter";
-        return ;
+        return;
     }
-    if(!number){
+    if (!number) {
         document.getElementById("password-error").innerHTML = "Password must contain at least one number";
-        return ;
+        return;
     }
-    if(!specialChar){
+    if (!specialChar) {
         document.getElementById("password-error").innerHTML = "Password must contain at least one special character";
-        return ;
+        return;
     }
-    if(confirmPassword === "")
-    {
+
+    if (confirmPassword === "") {
         document.getElementById("password-error").innerHTML = "Please confirm your password";
-        return ;
+        return;
     }
-    if(password !== confirmPassword){
+
+    if (password !== confirmPassword) {
         document.getElementById("password-error").innerHTML = "Password does not match";
-        return ;
+        return;
     }
+
     const data = {
-        fullname: fullname,
+        username: fullname,
         email: email,
-        password: password,
-        isAdmin: isAdmin
+        password: password
     };
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    users.push(data);
-    localStorage.setItem("users", JSON.stringify(users));
-    window.location.href = "./Login.html";
+    try {
+        const response = await fetch("https://omarsaberawad.pythonanywhere.com/auth/register/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const resData = await response.json();
+        console.log(resData);
+        if (response.ok) {
+            window.location.href = "./Login.html";
+        } else {
+            document.getElementById("password-error").innerHTML = resData.detail || "Registration failed";
+        }
+    } catch (error) {
+        document.getElementById("password-error").innerHTML = "Something went wrong. Please try again.";
+    }
 });
