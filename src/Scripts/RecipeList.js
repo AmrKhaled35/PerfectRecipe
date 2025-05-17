@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
   const data = await fetchRecipesFromAPI();
   renderRecipes(data);
-  initializeBookmarks();
   setupSearch();
 });
 
@@ -35,10 +34,10 @@ function renderRecipes(data) {
             <i class="bi bi-trash"></i>
           </button>
         </div>
-        <input type="checkbox" class="bookmark-checkbox" />
-        <label class="bookmark-btn">
-            <i class="bi bi-bookmark"></i>
-            <i class="bi bi-bookmark-fill"></i>
+        <input type="checkbox" class="bookmark-checkbox" id="bookmark-${recipe.id}" ${recipe.is_favourite ? 'checked' : ''}/>
+        <label for="bookmark-${recipe.id}" class="bookmark-btn">
+            <i class="bi bi-bookmark" style="display: ${recipe.is_favourite ? 'none' : 'block'}"></i>
+            <i class="bi bi-bookmark-fill" style="display: ${recipe.is_favourite ? 'block' : 'none'}"></i>
         </label>
       </div>
       <div class="recipe-rating">
@@ -60,23 +59,42 @@ function renderRecipes(data) {
         </div>
       </div>
     `;
-    recipeCard.setAttribute('data-recipe-id', recipe.id);
-    recipeCard.setAttribute('data-recipe', JSON.stringify({
-      id: recipe.id,
-      title: recipe.name,
-      image: recipe.image,
-      rating: recipeCard.querySelector('.recipe-rating').innerHTML,
-      author: {
-        name: "Omar Awad",
-        avatar: "https://ui-avatars.com/api/?name=Omar+Awad"
-      },
-      calories: "120 cals"
-    }));
+    
+    const checkbox = recipeCard.querySelector('.bookmark-checkbox');
+    checkbox.addEventListener('change', async function() {
+      const isFavourite = this.checked;
+      const label = recipeCard.querySelector('.bookmark-btn');
+      const outlineIcon = label.querySelector('.bi-bookmark');
+      const filledIcon = label.querySelector('.bi-bookmark-fill');
+      
+      try {
+        const response = await fetch(`https://omarsaberawad.pythonanywhere.com/recipes/${recipe.id}/`, {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            is_favourite: isFavourite
+          })
+        });
+
+        if (response.ok) {
+          outlineIcon.style.display = isFavourite ? 'none' : 'block';
+          filledIcon.style.display = isFavourite ? 'block' : 'none';
+        } else {
+          this.checked = !isFavourite;
+          throw new Error('Failed to update bookmark');
+        }
+      } catch (error) {
+        console.error('Error updating bookmark:', error);
+        this.checked = !isFavourite;
+      }
+    });
+    
     document.querySelector(".cards").appendChild(recipeCard);
   });
   
   setupActionButtons();
-  initializeBookmarks();
 }
 
 async function setupActionButtons() {
@@ -96,7 +114,6 @@ async function setupActionButtons() {
           });
           
           if (response.ok) {
-            alert('Recipe deleted successfully');
             const data = await fetchRecipesFromAPI();
             renderRecipes(data);
           } else {
@@ -104,7 +121,6 @@ async function setupActionButtons() {
           }
         } catch (error) {
           console.error('Error deleting recipe:', error);
-          alert('Error occurred while deleting the recipe');
         }
       }
     });
@@ -122,66 +138,17 @@ async function setupActionButtons() {
         const recipeData = await response.json();
         sessionStorage.setItem('currentRecipe', JSON.stringify(recipeData));
         window.location.href = `../AddRecipe/AddRecipe.html?edit=true&id=${recipeId}`;
-        
       } catch (error) {
         console.error('Error fetching recipe details:', error);
-        alert('Error loading recipe for editing');
       }
     });
   });
 }
 
-function initializeBookmarks() {
-  const recipeCards = document.querySelectorAll('.recipe-card');
-  let favorites = getFavorites();
-  recipeCards.forEach(card => {
-    const checkbox = card.querySelector('.bookmark-checkbox');
-    const label = card.querySelector('.bookmark-btn');
-    const recipeId = card.getAttribute('data-recipe-id');
-    const recipeData = JSON.parse(card.getAttribute('data-recipe'));
-    const checkboxId = `bookmark-${recipeId}`;
-    checkbox.id = checkboxId;
-    label.setAttribute('for', checkboxId);
-    if (favorites.some(fav => fav.id === recipeId)) {
-      checkbox.checked = true;
-      label.querySelector('.bi-bookmark-fill').style.display = 'block';
-      label.querySelector('.bi-bookmark').style.display = 'none';
-    }
-    checkbox.addEventListener('change', function () {
-      toggleBookmark(this, recipeData);
-    });
-  });
-}
-
-function toggleBookmark(checkbox, recipeData) {
-  const label = document.querySelector(`label[for="${checkbox.id}"]`);
-  const filledIcon = label.querySelector('.bi-bookmark-fill');
-  const outlineIcon = label.querySelector('.bi-bookmark');
-  let favorites = getFavorites();
-  if (checkbox.checked) {
-    filledIcon.style.display = 'block';
-    outlineIcon.style.display = 'none';
-    if (!favorites.some(fav => fav.id === recipeData.id)) {
-      favorites.push(recipeData);
-    }
-  } else {
-    filledIcon.style.display = 'none';
-    outlineIcon.style.display = 'block';
-    favorites = favorites.filter(fav => fav.id !== recipeData.id);
-  }
-  localStorage.setItem('favoriteRecipes', JSON.stringify(favorites));
-}
-
-function getFavorites() {
-  const favoritesJson = localStorage.getItem('favoriteRecipes');
-  return favoritesJson ? JSON.parse(favoritesJson) : [];
-}
-
 function setupSearch() {
   const input = document.querySelector('.search-input');
   const button = document.querySelector('.search-button');
-  if (!input || !button) return;
-
+  
   button.addEventListener('click', () => {
     const query = input.value.trim();
     if (query !== '') searchRecipes(query);
