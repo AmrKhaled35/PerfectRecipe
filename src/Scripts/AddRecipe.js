@@ -154,6 +154,7 @@ SaveRecipe.addEventListener('click', async function (e) {
     const requiredFieldsValid = (
         InputRecipeName.value.trim() !== "" &&
         InputRecipeId.value.trim() !== "" &&
+        InputRecipeId.value > 0  &&
         InputRecipeDescription.value.trim() !== "" &&
         InputCourseName.value.trim() !== "" &&
         InputInstructions.value.trim() !== "" &&
