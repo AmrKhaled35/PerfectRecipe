@@ -1,8 +1,30 @@
+let isAdmin = false;
+
 document.addEventListener('DOMContentLoaded', async function () {
+  await Permesion();
   const data = await fetchRecipesFromAPI();
   renderRecipes(data);
   setupSearch();
 });
+
+async function Permesion() {
+  const token = localStorage.getItem("Token");
+  try {
+    const response = await fetch("https://omarsaberawad.pythonanywhere.com/auth/current_user/", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) throw new Error("API request failed");
+    const data = await response.json();
+    isAdmin = data.isAdmin;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 async function fetchRecipesFromAPI() {
   try {
@@ -26,6 +48,7 @@ function renderRecipes(data) {
         <a href="../RecipeDetails/RecipeDetails.html?id=${recipe.id}">
           <img src="${recipe.image}" alt="${recipe.name}" />
         </a>
+        ${isAdmin ? `
         <div class="recipe-actions left-actions">
           <button class="edit-btn" data-id="${recipe.id}">
             <i class="bi bi-pencil-square"></i>
@@ -33,7 +56,7 @@ function renderRecipes(data) {
           <button class="delete-btn" data-id="${recipe.id}">
             <i class="bi bi-trash"></i>
           </button>
-        </div>
+        </div>` : ''}
         <input type="checkbox" class="bookmark-checkbox" id="bookmark-${recipe.id}" ${recipe.is_favourite ? 'checked' : ''}/>
         <label for="bookmark-${recipe.id}" class="bookmark-btn">
             <i class="bi bi-bookmark" style="display: ${recipe.is_favourite ? 'none' : 'block'}"></i>
@@ -61,12 +84,11 @@ function renderRecipes(data) {
     `;
     
     const checkbox = recipeCard.querySelector('.bookmark-checkbox');
-    checkbox.addEventListener('change', async function() {
+    checkbox.addEventListener('change', async function () {
       const isFavourite = this.checked;
       const label = recipeCard.querySelector('.bookmark-btn');
       const outlineIcon = label.querySelector('.bi-bookmark');
       const filledIcon = label.querySelector('.bi-bookmark-fill');
-      
       try {
         const response = await fetch(`https://omarsaberawad.pythonanywhere.com/recipes/${recipe.id}/`, {
           method: 'PATCH',
@@ -77,7 +99,6 @@ function renderRecipes(data) {
             is_favourite: isFavourite
           })
         });
-
         if (response.ok) {
           outlineIcon.style.display = isFavourite ? 'none' : 'block';
           filledIcon.style.display = isFavourite ? 'block' : 'none';
@@ -90,20 +111,21 @@ function renderRecipes(data) {
         this.checked = !isFavourite;
       }
     });
-    
-    document.querySelector(".cards").appendChild(recipeCard);
+
+    cardsContainer.appendChild(recipeCard);
   });
-  
-  setupActionButtons();
+
+  if (isAdmin) {
+    setupActionButtons();
+  }
 }
 
 async function setupActionButtons() {
   document.querySelectorAll('.delete-btn').forEach(btn => {
-    btn.addEventListener('click', async function(e) {
+    btn.addEventListener('click', async function (e) {
       e.stopPropagation();
       const recipeId = this.getAttribute('data-id');
       const confirmDelete = confirm('Are you sure you want to delete this recipe?');
-      
       if (confirmDelete) {
         try {
           const response = await fetch(`https://omarsaberawad.pythonanywhere.com/recipes/${recipeId}/`, {
@@ -112,7 +134,6 @@ async function setupActionButtons() {
               'Content-Type': 'application/json',
             }
           });
-          
           if (response.ok) {
             const data = await fetchRecipesFromAPI();
             renderRecipes(data);
@@ -125,16 +146,13 @@ async function setupActionButtons() {
       }
     });
   });
-  
   document.querySelectorAll('.edit-btn').forEach(btn => {
-    btn.addEventListener('click', async function(e) {
+    btn.addEventListener('click', async function (e) {
       e.stopPropagation();
       const recipeId = this.getAttribute('data-id');
-      
       try {
         const response = await fetch(`https://omarsaberawad.pythonanywhere.com/recipes/${recipeId}/`);
         if (!response.ok) throw new Error('Failed to fetch recipe details');
-        
         const recipeData = await response.json();
         sessionStorage.setItem('currentRecipe', JSON.stringify(recipeData));
         window.location.href = `../AddRecipe/AddRecipe.html?edit=true&id=${recipeId}`;
@@ -144,23 +162,20 @@ async function setupActionButtons() {
     });
   });
 }
-
 function setupSearch() {
   const input = document.querySelector('.search-input');
   const button = document.querySelector('.search-button');
-  
+
   button.addEventListener('click', () => {
     const query = input.value.trim();
     if (query !== '') searchRecipes(query);
   });
-
   input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       const query = input.value.trim();
       if (query !== '') searchRecipes(query);
     }
   });
-
   input.addEventListener('input', async () => {
     if (input.value.trim() === '') {
       const data = await fetchRecipesFromAPI();
@@ -168,7 +183,6 @@ function setupSearch() {
     }
   });
 }
-
 async function searchRecipes(query) {
   try {
     const response = await fetch(`https://omarsaberawad.pythonanywhere.com/search/recipes/?search=${encodeURIComponent(query)}`);

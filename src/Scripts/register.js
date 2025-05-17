@@ -94,7 +94,7 @@ form.addEventListener("submit", async (event) => {
         username: fullname,
         email: email,
         password: password,
-        isAdmin : is_superuser
+        isAdmin: is_superuser
     };
 
     try {
@@ -107,11 +107,32 @@ form.addEventListener("submit", async (event) => {
         });
 
         const resData = await response.json();
-        console.log(resData);
+
         if (response.ok) {
             window.location.href = "./Login.html";
         } else {
-            document.getElementById("password-error").innerHTML = resData.detail || "Registration failed";
+            document.getElementById("fullname-error").innerHTML = "";
+            document.getElementById("email-error").innerHTML = "";
+            document.getElementById("password-error").innerHTML = "";
+
+            for (const key in resData) {
+                if (resData.hasOwnProperty(key)) {
+                    const errorMessages = resData[key];
+                    if (key === "email") {
+                        document.getElementById("email-error").innerHTML = errorMessages.join("<br>");
+                    } else if (key === "username") {
+                        document.getElementById("fullname-error").innerHTML = errorMessages.join("<br>");
+                    } else if (key === "password") {
+                        document.getElementById("password-error").innerHTML = errorMessages.join("<br>");
+                    } else {
+                        document.getElementById("password-error").innerHTML = errorMessages.join("<br>");
+                    }
+                }
+            }
+
+            if (resData.detail) {
+                document.getElementById("password-error").innerHTML = resData.detail;
+            }
         }
     } catch (error) {
         document.getElementById("password-error").innerHTML = "Something went wrong. Please try again.";
