@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', async function () {
   initializeBookmarks();
   setupSearch();
 });
-
 async function fetchRecipesFromAPI() {
   try {
     const response = await fetch("https://omarsaberawad.pythonanywhere.com/recipes/");
@@ -27,6 +26,14 @@ function renderRecipes(data) {
         <a href="../RecipeDetails/RecipeDetails.html?id=${recipe.id}">
           <img src="${recipe.image}" alt="${recipe.name}" />
         </a>
+        <div class="recipe-actions left-actions">
+          <button class="edit-btn" data-id="${recipe.id}">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+          <button class="delete-btn" data-id="${recipe.id}">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
         <input type="checkbox" class="bookmark-checkbox" />
         <label class="bookmark-btn">
             <i class="bi bi-bookmark"></i>
@@ -66,7 +73,49 @@ function renderRecipes(data) {
     }));
     document.querySelector(".cards").appendChild(recipeCard);
   });
+  
+  setupActionButtons();
   initializeBookmarks();
+}
+
+function setupActionButtons() {
+  document.querySelectorAll('.delete-btn').forEach(btn => {
+    btn.addEventListener('click', async function(e) {
+      e.stopPropagation();
+      const recipeId = this.getAttribute('data-id');
+      const confirmDelete = confirm('Are you sure you want to delete this recipe?');
+      
+      if (confirmDelete) {
+        try {
+          const response = await fetch(`https://omarsaberawad.pythonanywhere.com/recipes/${recipeId}/`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            }
+          });
+          
+          if (response.ok) {
+            alert('Recipe deleted successfully');
+            const data = await fetchRecipesFromAPI();
+            renderRecipes(data);
+          } else {
+            throw new Error('Failed to delete recipe');
+          }
+        } catch (error) {
+          console.error('Error deleting recipe:', error);
+          alert('Error occurred while deleting the recipe');
+        }
+      }
+    });
+  });
+  
+  document.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const recipeId = this.getAttribute('data-id');
+      alert(`Editing recipe with ID ${recipeId}`);
+    });
+  });
 }
 
 function initializeBookmarks() {
@@ -145,7 +194,7 @@ async function searchRecipes(query) {
     const response = await fetch(`https://omarsaberawad.pythonanywhere.com/search/recipes/?search=${encodeURIComponent(query)}`);
     if (!response.ok) throw new Error("Search failed");
     const results = await response.json();
-    console.log("🔍 Search Results:", results);
+    console.log("Search Results:", results);
     renderRecipes(results);
   } catch (error) {
     console.error("Error searching recipes:", error);

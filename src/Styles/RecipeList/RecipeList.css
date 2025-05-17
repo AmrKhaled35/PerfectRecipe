@@ -314,3 +314,71 @@ h3 {
 .bookmark-btn.bookmarked {
     animation: bookmark-bounce 0.3s ease;
 }
+
+.recipe-image {
+    position: relative;
+  }
+  
+  .recipe-actions.left-actions {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 2;
+  }
+  
+  .edit-btn, .delete-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: #dc3545;
+    color: white;
+  }
+  
+  .edit-btn i, .delete-btn i {
+    font-size: 14px;
+  }
+  
+  .bookmark-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  .bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  .bi-bookmark-fill {
+    display: none;
+    color: #ffc107;
+  }

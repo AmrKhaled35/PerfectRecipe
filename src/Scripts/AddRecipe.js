@@ -46,7 +46,6 @@ imageInput.addEventListener('change', () => {
             mainImage.style.display = "block";
             deleteMainBtn.style.display = "block";
             document.querySelector(".main-image-container").style.visibility = "visible";
-
             let newThumb = document.createElement('div');
             newThumb.classList.add('thumbnail-item');
             newThumb.innerHTML = `
@@ -130,7 +129,6 @@ async function SendRecipeToAPIWithImage(recipeData, imageFile) {
         formData.append("is_favourite", recipeData.is_favourite);
         formData.append("ingredients", JSON.stringify(recipeData.ingredients));
         formData.append("image", imageFile); 
-
         const response = await fetch("https://omarsaberawad.pythonanywhere.com/recipes/", {
             method: "POST",
             body: formData
