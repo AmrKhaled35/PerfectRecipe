@@ -178,11 +178,30 @@
       <script src="../../Scripts/RecipeList.js"></script>
       <script src="../../Scripts/AddRecipe.js"></script>
       <script>
-        const curUser = JSON.parse(localStorage.getItem("currentUser"));
-        if(curUser.isAdmin){
-          document.getElementById("addRecipe").style.display = "block";
-          document.getElementById("addRecipe").style.gap = "0rem";
-        }
+        const token = localStorage.getItem("Token");
+        fetch("https://omarsaberawad.pythonanywhere.com/auth/current_user/", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+          },
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("API request failed");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+            if(data.isAdmin){
+              document.getElementById("addRecipe").style.display = "block";
+              document.getElementById("addRecipe").style.gap = "0rem";
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
       </script>
 >>>>>>> 3caa781d635bb32d8dcc8efeb0a5bbf43b88d9f5
 </body>

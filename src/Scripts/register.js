@@ -109,13 +109,6 @@ form.addEventListener("submit", async (event) => {
         const resData = await response.json();
         console.log(resData);
         if (response.ok) {
-            const users = JSON.parse(localStorage.getItem("users")) || [];
-            users.push({
-                username: fullname,
-                email: email,
-                isAdmin: is_superuser
-            });
-            localStorage.setItem("users", JSON.stringify(users));
             window.location.href = "./Login.html";
         } else {
             document.getElementById("password-error").innerHTML = resData.detail || "Registration failed";

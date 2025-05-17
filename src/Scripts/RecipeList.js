@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   initializeBookmarks();
   setupSearch();
 });
+
 async function fetchRecipesFromAPI() {
   try {
     const response = await fetch("https://omarsaberawad.pythonanywhere.com/recipes/");
@@ -78,7 +79,7 @@ function renderRecipes(data) {
   initializeBookmarks();
 }
 
-function setupActionButtons() {
+async function setupActionButtons() {
   document.querySelectorAll('.delete-btn').forEach(btn => {
     btn.addEventListener('click', async function(e) {
       e.stopPropagation();
@@ -110,10 +111,22 @@ function setupActionButtons() {
   });
   
   document.querySelectorAll('.edit-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', async function(e) {
       e.stopPropagation();
       const recipeId = this.getAttribute('data-id');
-      alert(`Editing recipe with ID ${recipeId}`);
+      
+      try {
+        const response = await fetch(`https://omarsaberawad.pythonanywhere.com/recipes/${recipeId}/`);
+        if (!response.ok) throw new Error('Failed to fetch recipe details');
+        
+        const recipeData = await response.json();
+        sessionStorage.setItem('currentRecipe', JSON.stringify(recipeData));
+        window.location.href = `../AddRecipe/AddRecipe.html?edit=true&id=${recipeId}`;
+        
+      } catch (error) {
+        console.error('Error fetching recipe details:', error);
+        alert('Error loading recipe for editing');
+      }
     });
   });
 }
@@ -194,7 +207,6 @@ async function searchRecipes(query) {
     const response = await fetch(`https://omarsaberawad.pythonanywhere.com/search/recipes/?search=${encodeURIComponent(query)}`);
     if (!response.ok) throw new Error("Search failed");
     const results = await response.json();
-    console.log("Search Results:", results);
     renderRecipes(results);
   } catch (error) {
     console.error("Error searching recipes:", error);
